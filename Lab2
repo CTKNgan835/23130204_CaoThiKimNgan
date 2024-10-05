@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username/Email</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Login</button>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </form>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard-container">
+        <header>
+            <h1>Welcome, Student Name!</h1>
+            <button class="logout-button">Logout</button>
+        </header>
+        
+        <div class="filter-container">
+            <select id="language-filter">
+                <option value="">Filter by Language</option>
+                <option value="C">C</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+            </select>
+            <input type="text" id="search" placeholder="Search exercises...">
+        </div>
+
+        <div class="exercise-section">
+            <h2>Exercises</h2>
+            <div class="exercise-group" data-language="C">
+                <h3>C Exercises</h3>
+                <div class="exercise-card">
+                    <h4>Exercise Title</h4>
+                    <p>Short description of the exercise.</p>
+                    <p>Difficulty: <span class="difficulty">Easy</span></p>
+                    <p>Time Limit: 30 minutes</p>
+                    <p>Points: 10</p>
+                    <p>Status: <span class="status">Not Started</span></p>
+                </div>
+                <!-- More C exercises can be added here -->
+            </div>
+
+            <div class="exercise-group" data-language="Python">
+                <h3>Python Exercises</h3>
+                <div class="exercise-card">
+                    <h4>Exercise Title</h4>
+                    <p>Short description of the exercise.</p>
+                    <p>Difficulty: <span class="difficulty">Medium</span></p>
+                    <p>Time Limit: 45 minutes</p>
+                    <p>Points: 15</p>
+                    <p>Status: <span class="status">In Progress</span></p>
+                </div>
+                <!-- More Python exercises can be added here -->
+            </div>
+
+            <div class="exercise-group" data-language="Java">
+                <h3>Java Exercises</h3>
+                <div class="exercise-card">
+                    <h4>Exercise Title</h4>
+                    <p>Short description of the exercise.</p>
+                    <p>Difficulty: <span class="difficulty">Hard</span></p>
+                    <p>Time Limit: 60 minutes</p>
+                    <p>Points: 20</p>
+                    <p>Status: <span class="status">Completed</span></p>
+                </div>
+                <!-- More Java exercises can be added here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

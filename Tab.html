@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - Sinh viên</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #444;
+      }
+      .header {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      .tab {
+        display: flex;
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      .tab button {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 17px;
+        transition: 0.3s;
+      }
+      .tab button:hover {
+        background-color: #ddd;
+      }
+      .tab button.active {
+        background-color: #ccc;
+      }
+      .tabcontent {
+        display: none;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>  Giới thiệu </h1>
+        <p> </p>
+      </div>
+
+      <!-- Tab navigation -->
+      <div class="tab">
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'Tab1')"
+          id="defaultOpen"
+        >
+          Tab 1
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'Tab2')">Tab 2</button>
+        <button class="tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
+      
+      </div>
+
+      <!-- Tab content -->
+      <div id="Tab1" class="tabcontent">
+        <h2>Tab 1 -  Tên </h2>
+        <p></p>
+      </div>
+
+      <div id="Tab2" class="tabcontent">
+        <h2>Tab 2 - thông tin liên quan</h2>
+        <p></p>
+      </div>
+
+      <div id="Tab3" class="tabcontent">
+        <h2>Tab 3 - Kỹ năng</h2>
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+     
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+
+        // Hide all tab contents
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Remove active class from all tab buttons
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab content and add active class to the button
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Open the default tab
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>
