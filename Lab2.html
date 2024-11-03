@@ -1,0 +1,79 @@
+<html lang="vi"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nền Tảng Lập Trình</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Màn hình Đăng nhập -->
+    <div class="container mt-5">
+        <h2 class="text-center">Đăng Nhập Sinh Viên</h2>
+        <form id="login-form" class="mt-4">
+            <div class="form-group">
+                <label for="username">Tên người dùng/Email</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
+            <a href="#" id="forgot-password" class="d-block text-center mt-2">Quên Mật Khẩu?</a>
+        </form>
+    </div>
+
+    <!-- Bảng điều khiển -->
+    <div id="dashboard" class="container mt-5" style="display:none;">
+        <h2>Các Bài Tập Có Sẵn</h2>
+        <div class="mb-4">
+            <label for="language-filter">Lọc theo Ngôn Ngữ:</label>
+            <select id="language-filter" class="form-control w-25 d-inline-block">
+                <option value="all">Tất cả</option>
+                <option value="C">C</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+            </select>
+            <input type="text" id="search-bar" class="form-control w-50 d-inline-block" placeholder="Tìm kiếm bài tập...">
+        </div>
+        <div id="exercise-list">
+            <!-- Các bài tập sẽ được tạo động ở đây -->
+            <div class="exercise card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Tên Bài Tập</h5>
+                    <p class="card-text">Mô tả ngắn gọn về bài tập.</p>
+                    <p class="card-text"><small class="text-muted">Độ khó: Dễ | Thời gian giới hạn: 30 phút | Điểm: 10</small></p>
+                    <button class="btn btn-success">Chọn Bài Tập</button>
+                </div>
+            </div>
+            <!-- Lặp lại cấu trúc tương tự cho nhiều bài tập hơn -->
+        </div>
+    </div>
+
+    <!-- Chi tiết Bài Tập -->
+    <div id="exercise-detail" class="container mt-5" style="display:none;">
+        <h2>Tên Bài Tập</h2>
+        <p>Mô tả về bài tập.</p>
+        <div id="code-editor" class="mb-4">
+            <textarea class="form-control" placeholder="Viết mã của bạn ở đây..." rows="10"></textarea>
+            <button id="run-code" class="btn btn-warning mt-2">Chạy Mã</button>
+            <button id="clear-code" class="btn btn-secondary mt-2">Xóa Mã</button>
+            <button id="submit-code" class="btn btn-primary mt-2">Gửi</button>
+        </div>
+        <div id="test-cases">
+            <h3>Các Trường Hợp Kiểm Tra</h3>
+            <!-- Hiển thị các trường hợp kiểm tra động -->
+        </div>
+        <div id="submission-results">
+            <!-- Kết quả sẽ được hiển thị ở đây sau khi gửi -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

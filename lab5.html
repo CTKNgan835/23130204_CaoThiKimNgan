@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Learning</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #dfdede;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: white;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      padding: 20px 20px;
+      display: flex;
+      font-size: 25px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sub-header {
+      background-color: #333;
+      color: #b1acac;
+      padding: 20px 20px;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      margin-bottom: 0;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    
+    .tabs div {
+      padding: 10px;
+      cursor: pointer;
+      color: white;
+    }
+    
+    .tabs .active {
+      font-weight: bold;
+      border-bottom: 2px solid black;
+    }
+
+    .divider {
+      background-color: #333; 
+      height: 4px; 
+      margin-bottom: 20px; 
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .certifications-header, .course-card {
+      margin-top: 20px;
+    }
+
+    .certifications-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .certifications-header .title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .button {
+      padding: 8px 16px;
+      background-color: #6200ea;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .badge-section {
+      margin-top: 20px;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background-color: #e0e0e0;
+      margin: 10px 0;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .progress-bar span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #6200ea;
+      border-radius: 2px;
+    }
+
+    .rating {
+      color: #ff9800;
+      font-size: 14px;
+    }
+
+    .badge-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .badge-count {
+      font-weight: bold;
+    }
+
+    .badge-description {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .badge-divider {
+      height: 1px;
+      background-color: transparent;
+      margin: 15px 0; 
+    }
+
+    /* Styles for certification section */
+    .certification {
+      margin-top: 20px; /* Space above */
+    }
+
+    .certification-cards {
+      display: flex; /* Use flexbox */
+      gap: 20px; /* Space between cards */
+    }
+
+    .certification-card {
+      display: flex; /* Align items horizontally */
+      background-color: #f9f9f9; /* Optional background */
+      padding: 10px; /* Padding for the card */
+      border-radius: 5px; /* Rounded corners */
+      align-items: center; /* Vertically center items */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    }
+
+    .certification-card img {
+      margin-right: 10px; /* Space between image and text */
+    }
+
+    /* Styles for archived courses */
+    .course-list {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .course-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      position: relative;
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .course-content {
+      padding: 15px;
+    }
+
+    .course-content h3 {
+      margin: 0;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .divider {
+      border-bottom: 1px solid #ddd;
+      margin: 10px 0;
+    }
+
+    .progress-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .progress {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .rating {
+      display: flex;
+      gap: 3px;
+    }
+
+    .rating span {
+      font-size: 18px;
+      color: #ffcc00;
+    }
+
+    .rating-text {
+      margin-top: 5px;
+      text-align: right;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* Styles for learning tools */
+    .learning-tools {
+      margin-top: 20px;
+    }
+
+    .learning-tools h2 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .learning-tools p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .tool-cards {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .tool-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .tool-card img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .tool-content {
+      flex: 1;
+    }
+
+    .tool-content h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .tool-content p {
+      margin: 5px 0 10px;
+      color: #555;
+    }
+
+    .tool-content a {
+      text-decoration: none;
+      color: #0073e6;
+      font-weight: bold;
+    }
+
+    .beta-badge {
+      background-color: #e0e0e0;
+      color: #555;
+      border-radius: 4px;
+      font-size: 12px;
+      padding: 2px 5px;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">My learning</div>
+    <div class="sub-header">87hr 36min watched • <a style="color: white; text-decoration: underline;" href="#">View all activity</a></div>
+
+    <div class="tabs">
+      <div onclick="showSection('all-courses')">All courses</div>
+      <div onclick="showSection('learning-paths')">Learning paths</div>
+      <div class="active" onclick="showSection('certifications')">Certifications</div>
+      <div onclick="showSection('archived')">Archived</div>
+      <div onclick="showSection('learning-tools')">Learning tools</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- All Courses Section -->
+    <div id="all-courses" class="section">
+      <p>All courses content goes here.</p>
+    </div>
+
+    <!-- Learning Paths Section -->
+    <div id="learning-paths" class="section">
+      <p>Learning paths content goes here.</p>
+    </div>
+
+    <!-- Certifications Section -->
+    <div id="certifications" class="section active">
+      <div class="badge-section">
+        <hr>
+        <div class="badge-title">
+          <h3>My badges</h3>
+          <span>^</span>
+        </div>
+        <div class="info">
+          <span>You have earned and uploaded <span class="badge-count">0 badges</span></span>
+          <button class="button">Import new badge</button>
+        </div>
+        <p class="badge-description">Currently, there are no badges uploaded to your profile. Begin your journey towards your certification goals or <a href="#">upload your third-party badges</a> to your profile and impress your manager and peers with your accomplishments. Start preparing for your next certificate today!</p>
+        <hr> 
+        
+        <div class="badge-divider"></div>
+      </div>
+
+      <div class="section-header">
+        <h3>Certification preparation</h3>
+      </div>
+      <div class="info">
+        <span>You are preparing for <span class="badge-count">4 certifications</span></span>
+        <div class="button-container">
+          <button class="button">Explore certification preparation</button>
+        </div>
+      </div>
+
+      <div class="certification">
+        <div class="certification-cards">
+          <div class="certification-card">
+            <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-de-thuong-don-gian-010.jpg" alt="Oracle" width="50", height="50">
+            <div>
+              <h4>Oracle Certified Associate, Java SE 8 Programmer</h4>
+              <p>Oracle</p>
+            </div>
+          </div>
+          <div class="certification-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcxb5IpP5sQKwBGVY3RynVDCn7xACt6gf3vs6MLtiqz0BlsyolDBDOp9KMVNFWbmvS-5Odc_5feqK5IK0NdtwCKPf2yozIOsluZI_URKUoJFV5iMRlgMkJNIccE9LWFjFfeUZZSkuCSrsltxak4FqEQdZQS?key=D7iSQBJlXYdsdlaEymwxNA" alt="ISTQB" width="50", height="50">
+            <div>
+              <h4>ISTQB® Certified Tester Foundation Level (CTFL)</h4>
+              <p>Brightest</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Combined Archived Section -->
+    <div id="archived" class="section">
+      <div class="course-list">
+        <!-- Course 1 -->
+        <div class="course-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk3Mxf0K2lXt8ppu5Il84E0GlcTTb1vCn2Rg&s" alt="CSR Course" width="100", height="50">
+          <div class="menu-icon">⋮</div>
+          <div class="course-content">
+            <h3>FPT_Corporate social responsibility training 2024</h3>
+            <div class="divider"></div>
+            <div class="progress-container">
+              <div class="progress">100% complete</div>
+              <div class="rating">
+                <span>⭐⭐⭐⭐☆</span>
+              </div>
+            </div>
+            <div class="rating-text">Your rating</div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card">
+          <img src="https://inkythuatso.com/uploads/thumbnails/800/2022/05/hinh-cute-meo-12-13-59-56.jpg" alt="Another Course" width="100", height="50">
+          <div class="menu-icon">⋮</div>
+          <div class="course-content">
+            <h3>FPT_Leadership Development Program 2024</h3>
+            <div class="divider"></div>
+            <div class="progress-container">
+              <div class="progress">80% complete</div>
+              <div class="rating">
+                <span>⭐⭐⭐⭐☆</span>
+              </div>
+            </div>
+            <div class="rating-text">Your rating</div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card">
+          <img src="https://fptsoftware.com/-/media/project/fpt-software/global/iba-award.png?modified=20240828041748/100x40" alt="Another Course">
+          <div class="menu-icon">⋮</div>
+          <div class="course-content">
+            <h3>FPT_Software Engineering Basics 2024</h3>
+            <div class="divider"></div>
+            <div class="progress-container">
+              <div class="progress">50% complete</div>
+              <div class="rating">
+                <span>⭐⭐⭐☆☆</span>
+              </div>
+            </div>
+            <div class="rating-text">Your rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Learning Tools Section -->
+    <div id="learning-tools" class="section">
+      <div class="learning-tools">
+        <h2>Learning tools</h2>
+        <p>Explore a diverse range of courses and take advantage of these versatile tools to gain knowledge, skills, and confidence at your own pace.</p>
+
+        <div class="tool-cards">
+          <!-- Tool Card 1 -->
+          <div class="tool-card">
+            <img src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-ve-cute-dang-yeu-009.jpg" alt="Reminder Icon" width="40", height="40">
+            <div class="tool-content">
+              <h3>Learning reminders</h3>
+              <p>Set time aside to learn and get reminders using your scheduler.</p>
+              <p>You currently have no ongoing reminders.</p>
+              <a href="#">See more</a>
+            </div>
+          </div>
+
+          <!-- Tool Card 2 -->
+          <div class="tool-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1s4GM2xBVfK58JcHIreGFWymuSltgKr5-ZZ6WfRl84Ulo4P4py5qBNn5iUQOiHBKU3SA&usqp=CAU" alt="Reflections Icon" width="40", height="40">
+            <div class="tool-content">
+              <h3>Reflections <span class="beta-badge">Beta</span></h3>
+              <p>Take time to reflect to strengthen your learning.</p>
+              <p>You have currently no recorded reflections on your learning journey.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      const tabs = document.querySelectorAll('.tabs div');
+      
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+      
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.querySelector(`.tabs div[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
+  </script>
+</body>
+</html>

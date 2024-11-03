@@ -1,0 +1,339 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    color: #333;
+    background-color: #fafafa;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6d8758;
+}
+
+.navbar nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.navbar nav a.active {
+    font-weight: bold;
+    color: #6d8758;
+}
+
+.services-section {
+    padding: 20px;
+    background-color: #f9f9f9; /* Màu nền cho khung */
+    border: 1px solid #ddd; /* Đường viền cho khung */
+    border-radius: 8px; /* Làm mềm các góc */
+    margin: 20px; /* Khoảng cách bên ngoài */
+}
+
+.services-container {
+    display: flex; /* Hiển thị các item theo hàng ngang */
+    justify-content: space-around; /* Căn giữa các item */
+    flex-wrap: wrap; /* Cho phép xuống dòng khi không đủ chỗ */
+}
+
+.service-item {
+    text-align: center; /* Căn giữa nội dung trong từng item */
+    margin: 10px; /* Khoảng cách giữa các item */
+}
+
+.service-item img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của item */
+    height: auto; /* Để chiều cao tự động */
+}
+
+
+body {
+    background-image: url('https://i.pinimg.com/736x/7a/51/4b/7a514b2d0f9b13773b946993efe5fd74.jpg'); /* Thay thế bằng URL hình ảnh thật */
+    background-size: cover; /* Bọc đầy không gian của phần tử */
+    background-position: center; /* Canh giữa hình ảnh */
+    background-repeat: no-repeat; /* Không lặp lại hình ảnh nền */
+    min-height: 100vh; /* Chiều cao tối thiểu của body là toàn bộ chiều cao của viewport */
+    margin: 0; /* Xóa khoảng cách mặc định */
+}
+.hero {
+    background-image: url('https://watermark.lovepik.com/photo/20211208/large/lovepik-tulip-garden-picture_501588508.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(136, 134, 134, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.shop-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6d8758;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.shop-btn:hover {
+    background-color: #5b7546;
+}
+
+/* Services Section Styling */
+.services-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #6d8758;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    width: 200px;
+    text-align: center;
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.service-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #6d8758;
+    }
+
+/* Footer Section Styling */
+footer {
+    background-color: #f5f5f5;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column {
+    width: 30%;
+}
+
+.footer-column h3 {
+    color: #6d8758;
+    margin-bottom: 10px;
+}
+
+.footer-column p,
+.footer-column a {
+    font-size: 14px;
+    color: #faf4f4;
+}
+
+.footer-column .contact-form input,
+.footer-column .contact-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.footer-column .contact-form button {
+    background-color: #6d8758;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-column .contact-form button:hover {
+    background-color: #5b7546;
+}
+
+/* Tab content styling */
+
+.tab-link {
+    color: black; /* Màu bình thường */
+    text-decoration: none; /* Không gạch dưới */
+}
+
+.tab-link.active {
+    color: green; /* Màu khi tab được chọn */
+}
+.tab-content {
+    padding: 20px;
+    border: 1px solid #0b0b0b;
+    margin-top: 20px;
+    background-color: #f4faed;
+}
+
+/* Hero Section Styling */
+.hero {
+    background-image: url('./ảnh/nềnhoa.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(143, 142, 142, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.shop-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6d8758;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.shop-btn:hover {
+    background-color: #5b7546;
+}
+
+
+
+.lab-links {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.lab-links li {
+    margin: 5px 0;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.about-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.about-container {
+    background-color: #f9f9f9; /* Màu nền của khung */
+    border: 1px solid #ddd; /* Đường viền */
+    border-radius: 8px; /* Làm mềm các góc */
+    padding: 15px; /* Khoảng cách bên trong */
+    margin: 20px auto; /* Margin tự động để căn giữa phần khung */
+    max-width: 400px; /* Đặt chiều rộng tối đa cho khung */
+}
+
+.about-image {
+    max-width: 100%; /* Hình ảnh không vượt quá chiều rộng khung */
+    height: auto; /* Chiều cao tự động */
+}
+
+.about-description {
+    margin-top: 10px; /* Khoảng cách giữa hình và mô tả */
+}
+
+/* About Page Styling */
+.about-content {
+    display: flex;
+    margin-top: 20px;
+}
+
+.about-content img {
+    max-width: 300px;
+    margin-right: 20px;
+}
+
+
+
+.about-content {
+    display: flex; /* Nếu bạn cần sắp xếp thêm nội dung, */
+    justify-content: center; /* Canh giữa nội dung */
+    align-items: center; /* Canh giữa dọc */
+    
+}
+.about-intro p {
+    font-size: 16px; /* Kích thước chữ cho các đoạn */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+.highlight {
+    font-weight: bold; /* In đậm văn bản */
+    color: #5b7546; /* Màu chữ là xanh */
+}
