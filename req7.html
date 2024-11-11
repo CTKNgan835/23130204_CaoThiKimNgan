@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Focused on Your Goals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9eaeb;
+            margin: 0;
+            padding: 2rem; 
+        }
+        .container {
+            display: flex;
+            gap: 6rem; 
+        }
+        .left-panel {
+            background: white;
+            padding: 2.5rem 1rem ; 
+            border-radius: 1.6rem; 
+            position: relative;
+            flex: 1;
+        }
+
+        .right-panel {
+            background: white;
+            padding: 1.25rem; 
+            border-radius: 1rem; 
+            position: relative;
+            flex: 1; 
+        }
+
+        .goal-section {
+            border: 1px solid #ddd;
+            padding: 0.9375rem; 
+            border-radius: 0.5rem;
+            margin-bottom: 0.625rem; 
+            display: flex; 
+            align-items: center; 
+            transition: border-color 0.3s;}
+        
+        .goal-section.active {
+            border-color: rgb(230, 0, 255); 
+        }
+
+        .goal-section img {
+            width: 50px; 
+            height: 50px; 
+            margin-right: 1rem; 
+        }
+
+        .goal-section h3 {
+            margin-top: 0;
+        }
+        .goal-section .badge {
+            display: inline-block;
+            font-size: 0.75rem; 
+            color: #7a3ed8;
+            border: 1px solid #7a3ed8;
+            padding: 0.125rem 0.375rem; 
+            border-radius: 0.25rem; 
+        }
+        .goal-section p {
+            color: #555;
+        }
+        .highlight {
+            font-size: 1rem;
+            color: #7a3ed8; 
+        }
+        .score-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.625rem; 
+        }
+        .score {
+            font-size: 1.4em;
+            color: black; 
+        }
+        .performance-bar {
+            width: 100%;
+            height: 0.625rem; 
+            background: linear-gradient(to right, #e0e0e0 50%, #7a3ed8 50%);
+            position: relative;
+            border-radius: 0.3125rem; 
+            margin-top: 0.625rem; 
+        }
+        .performance-bar .indicator {
+            position: absolute;
+            right: 0;
+            top: -0.3125rem; 
+            color: #7a3ed8;
+            font-size: 0.75rem; 
+        }
+        .summary {
+            display: flex;
+            background-color: white; 
+            color: black; 
+            border: 1px solid #ddd; 
+            border-radius: 0.2rem; 
+            padding: 0.625rem 2.5rem; 
+            cursor: pointer; 
+            text-align: center ; 
+            transition: background-color 0.4s ease; 
+        }
+        .badge-count {
+            font-weight: bold;
+        }
+
+        .summary img {
+            margin-right: 0.625rem; 
+            width: 30px; 
+            height: 30px; 
+        }
+        .summary:hover {
+            background-color: #f0f0f0; 
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 0.5rem; 
+            position: absolute; 
+            top: 1rem; 
+            left: 1rem; 
+            z-index: 10; 
+        }
+        .control-buttons div {
+            width: 10px; 
+            height: 10px; 
+            border-radius: 50%; /* Tạo hình tròn */
+        }
+        .red {
+            background-color: rgb(244, 80, 80);
+        }
+        .yellow {
+            background-color: rgb(245, 206, 92);
+        }
+        .green {
+            background-color: rgb(164, 238, 99);
+        }
+
+        
+        .title-container {
+            background-color: rgba(122, 62, 186, 0.1); 
+            border: 2px solid rgba(122, 62, 186, 0.5); 
+            border-radius: 0.5rem; 
+            text-align: center; 
+            padding : 1rem; 
+            margin: 1rem 0; 
+        }
+        
+        .what-does-it-mean {
+            color: #7a3ed8;
+            text-decoration: underline; 
+            margin-top: 4rem; 
+            cursor: pointer; 
+            font-size: 0.6em;
+        }
+
+        .Your {
+            font-size: 0.75rem; 
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between; 
+            margin-top: 1rem; 
+        }
+
+        .left-buttons {
+            display: flex; 
+        }
+
+        .right-buttons {
+            display: flex;
+        }
+       
+        .button {
+            background-color: white; 
+            border:1px solid rgba(53, 53, 53, 0.5); 
+            border-radius: 0.1rem; 
+            padding: 0.625rem 1rem; 
+            cursor: pointer; 
+            transition: background-color 0.3s;
+        }
+        
+        .button1 {
+            background: rgb(243, 224, 255) ;
+            border:1px solid rgba(17, 17, 17, 0.5);
+            border-radius: 0.1rem; 
+            padding: 0.625rem 1rem; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        }
+          
+        .button2 {
+            background: #ffffd6 ;
+            border:1px solid rgba(124, 105, 8, 0.5);
+            border-radius: 0.1rem; 
+            padding: 0.625rem 1rem;
+            cursor: pointer; 
+            transition: background-color 0.3s;  
+        } 
+        .button3 {
+            background: rgb(203, 200, 200) ;
+            border:1px solid rgba(8, 8, 8, 0.5);
+            border-radius: 0.1rem; 
+            padding: 0.625rem 1rem; 
+            cursor: pointer; 
+            transition: background-color 0.3s;   
+        }
+
+        .button:hover {
+            background-color: #7a3ed8; 
+            color: white;   
+        }
+        
+        .button1:hover {
+            background-color: #7a3ed8; 
+            color: white;   
+        } 
+            
+        .button2:hover {
+            background-color: #e2e865; 
+            color: white;   
+        }
+            
+        .button3:hover {
+            background-color: #727172; 
+            color: white;   
+        }
+
+        .answers {
+            color: black;
+            margin-top: 0.5rem; 
+        }
+        .question {
+            background:#f0faff ;
+            padding: 0.625rem; 
+            border: 1px solid #e2f5ff;
+            border-radius: 0.1rem; 
+            margin-bottom: 0.625rem; 
+        }
+        .question.correct {
+            border-color: #dcf5ff;
+            color: #000000;
+        }
+        
+        .xam {
+            color:rgba(125, 123, 123, 0.5);
+            font-size: 1rem;
+        }
+
+        .check-icon {
+            font-size: 1.5rem; 
+            margin-right: 0.625rem; 
+        }
+
+        .avq {
+            font-size: 0.75rem ; 
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Learning focused on your goals</h1>
+
+<div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <div class="goal-section highlighted">
+            <img src="https://image.theinfluencer.vn/files/2023/4/imgs/file-1681191213441.jpg??????/50" alt="Training Icon">
+            <div>
+                <h3>Hands on training</h3>
+                <p>Upskill effectively with AI-powered coding exercises, practice tests, and quizzes.</p>
+            </div>
+        </div>
+        <div class="goal-section">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Fnu_jGSPIkk5hKU2NcxNP13mtNOvZniehA&s/50" alt="Certification Prep Icon">
+            <div>
+                <h3>Certification prep</h3>
+                <p>Prep for industry-recognized certifications by solving real-world challenges and earn badges along the way.</p>
+            </div>
+        </div>
+        <div class="goal-section">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLLjBcDjfhvQhStlclqaqh-DXgQ7EnmR6EhQ&s/50" alt="Insights Icon">
+            <div>
+                <h3>Insights and analytics <span class="badge">Enterprise Plan</span></h3>
+                <p>Fast-track goals with advanced insights plus a dedicated customer success team to help drive effective learning.</p>
+                <span class="highlight">find out more -></span>
+            </div>
+        </div>
+        <div class="goal-section">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWVPGv4vKIXUCbSvv9hLMQTJJ9kAfC4ObigA&s/50" alt="Customizable Content Icon">
+            <div>
+                <h3>Customizable content <span class="badge">Enterprise Plan</span></h3>
+                <p>Create tailored learning paths for team and organization goals and even host your own content and resources.</p>
+                <span class="highlight"> find out more -> </span>
+            </div>
+        </div>
+        
+        <div class="goal-section">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWVPGv4vKIXUCbSvv9hLMQTJJ9kAfC4ObigA&s/50" alt="Real World Projects Icon">
+            <div>
+                <h3>Real World Projects</h3>
+                <p>Apply your skills to real-world projects that simulate practical scenarios and challenges.</p>
+            </div>
+        </div>
+
+        <div class="goal-section">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Fnu_jGSPIkk5hKU2NcxNP13mtNOvZniehA&s/50" alt="Learning Strategies Icon">
+            <div>
+                <h3>Learning Strategies</h3>
+                <p>Discover effective learning strategies tailored for various skill levels to enhance retention and performance.</p>
+            </div>
+        </div>
+        <div class="goal-section highlighted">
+            <img src="https://image.theinfluencer.vn/files/2023/4/imgs/file-1681191213441.jpg??????/50" alt="Training Icon">
+            <div>
+                <h3>Hands on training</h3>
+                <p>Upskill effectively with AI-powered coding exercises, practice tests, and quizzes.</p>
+            </div>
+            </div> 
+    </div>
+
+    
+    <!-- Right Panel -->
+    <div class="right-panel">
+        <div class="control-buttons">
+            <div class="red"></div>
+            <div class="yellow"></div>
+            <div class="green"></div>
+        </div>
+
+        <!-- Title Container -->
+        <div class="title-container">
+            <h2>Containerization</h2>
+            <p>30 questions</p>
+        </div>
+
+        <div class="score-container">
+            <div class="score">Your score: 159  <span class="what-does-it-mean" href="#" >What does this number mean? </span></div> 
+            <div class="performance-bar"></div>
+        </div>
+
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        <div class="chart-container"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script>
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: ["0", "88th Percentile"],
+                datasets: [{
+                    label: "Performance Score",
+                    data: [0, 159],
+                    backgroundColor: "rgba(0, 0, 255, 0.1)",
+                    borderColor: "rgba(76, 0, 153, 1)",
+                    fill: true,
+                    pointBackgroundColor: "rgba(76, 0, 153, 1)",
+                    pointBorderColor: "rgba(76, 0, 153, 1)",
+                    pointRadius: 5,
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: 200,
+                            stepSize: 50,
+                            callback: function(value) {
+                                if (value === 0) return "Limited (0-49)";
+                                if (value === 50) return "Developing (50-99)";
+                                if (value === 100) return "Established (100-149)";
+                                if (value === 150) return "Superior (150-200)";
+                                return value;
+                            }
+                        },
+                        scaleLabel: {
+                            display: true,
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                        }
+                    }]
+                },
+                annotation: {
+                    annotations: [{
+                        type: 'line',
+                        mode: 'vertical',
+                        scaleID: 'x-axis-0',
+                        value: "88th Percentile",
+                        borderColor: "rgba(76, 0, 153, 0.7)",
+                        borderWidth: 2,
+                        label: {
+                            enabled: true,
+                            content: '88th Percentile',
+                            position: "top"
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+
+        <button class="summary">
+            <img src="https://image.theinfluencer.vn/files/2023/4/imgs/file-1681191213441.jpg??????" alt="Training Icon">
+        Your performance was better than <span class="badge-count">88%</span>  of learners who have completed this assessment. 
+        </button>
+
+        <div class="Your">
+            <h2>Your Answers</h2>
+            <p> Review your answers. Learn from these explanations of correct and incorrect response options </p> 
+        </div> 
+
+        <div class="button-container">
+            <div class="left-buttons">
+                <button class="button">All Domains ^</button>
+                <button class="button">All Answers ^</button>
+            </div>
+            <div class="right-buttons">
+                <button class="button1">23 Correct</button>
+                <button class="button2">7 Incorrect</button>
+                <button class="button3">0 Skipped</button>
+            </div>
+        </div>
+
+        <div class="answers">
+            <div class="question correct">
+                
+                <h4> <span class="check-icon">☑️</span>
+                    Question 1 
+                    <span class="xam"> Correct</span> </span>  
+                </h4>
+                <span class ="avq">Which of the following scenarios will benefit most from a managed Kubernetes service, such as AWS EKS or Google Cloud’s GKE?</span>
+            </div>
+            <div class="question correct">
+                
+                <h4><span class="check-icon">☑️</span>
+                    Question 2 
+                <span class="xam"> Correct</span>
+                
+                </h4>
+                <span class ="avq">You containerized a web application, and one of the containers is running the database engine. Which of the following strategies is the best to persist that data?</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    document.querySelectorAll('.goal-section').forEach(function(section) {
+        section.addEventListener('click', function() {
+            
+            document.querySelectorAll('.goal-section').forEach(function(sec) {
+                sec.classList.remove('active');
+            });
+            
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
