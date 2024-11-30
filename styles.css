@@ -16,7 +16,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: #dcd9d9;
 }
 
 .navbar .logo {
@@ -45,7 +45,7 @@ body {
 
 .services-section {
     padding: 20px;
-    background-color: #f9f9f9; /* Màu nền cho khung */
+    background-color:#f5f5f5; 
     border: 1px solid #ddd; /* Đường viền cho khung */
     border-radius: 8px; /* Làm mềm các góc */
     margin: 20px; /* Khoảng cách bên ngoài */
@@ -69,15 +69,17 @@ body {
 
 
 body {
-    background-image: url('https://i.pinimg.com/736x/7a/51/4b/7a514b2d0f9b13773b946993efe5fd74.jpg'); /* Thay thế bằng URL hình ảnh thật */
-    background-size: cover; /* Bọc đầy không gian của phần tử */
+    background-color: white ;
+    background-size: cover;
+     /* Bọc đầy không gian của phần tử */ 
     background-position: center; /* Canh giữa hình ảnh */
     background-repeat: no-repeat; /* Không lặp lại hình ảnh nền */
     min-height: 100vh; /* Chiều cao tối thiểu của body là toàn bộ chiều cao của viewport */
     margin: 0; /* Xóa khoảng cách mặc định */
 }
+
 .hero {
-    background-image: url('https://watermark.lovepik.com/photo/20211208/large/lovepik-tulip-garden-picture_501588508.jpg');
+    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
     background-size: cover;
     background-position: center;
     height: 90vh;
@@ -90,6 +92,8 @@ body {
 }
 
 .hero::before {
+    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
+    background-size: cover;
     content: "";
     position: absolute;
     top: 0;
@@ -100,11 +104,13 @@ body {
 }
 
 .hero-content {
+    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
     position: relative;
     z-index: 1;
 }
 
 .hero h2 {
+    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
     font-size: 48px;
     font-weight: 300;
     margin-bottom: 20px;
@@ -147,21 +153,25 @@ body {
     text-align: center;
 }
 
+.service-item {
+    transform: translateY(-5px); /* Nâng khung lên khi hover */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Tăng độ bóng khi hover */
+}
+
 .service-item img {
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
-.service-item p {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #6d8758;
-    }
-
-/* Footer Section Styling */
+.service-item img:hover {
+       
+        transform: translateY(-5px); /* Nâng khung lên khi hover */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Tăng độ bóng khi hover */
+    
+}
 footer {
-    background-color: #f5f5f5;
+    background-color:  #dcd9d9;
     padding: 40px;
     display: flex;
     justify-content: space-between;
@@ -219,7 +229,7 @@ footer {
 
 /* Hero Section Styling */
 .hero {
-    background-image: url('./ảnh/nềnhoa.jpg');
+    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
     background-size: cover;
     background-position: center;
     height: 50vh;
@@ -242,11 +252,13 @@ footer {
 }
 
 .hero-content {
+    background-image: url('./ảnh/nềnhoa.jpg');
     position: relative;
     z-index: 1;
 }
 
 .hero h2 {
+    background-image: url('./ảnh/nềnhoa.jpg');
     font-size: 48px;
     font-weight: 300;
     margin-bottom: 20px;
@@ -262,24 +274,190 @@ footer {
 }
 
 .shop-btn:hover {
+    background-color: #6d8758 ;
+}
+
+.service-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #6d8758;
+    }
+
+
+    .images-section {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .images-section h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #6d8758;
+        border: 2px solid #FFFFFF;
+        background-color: white ;  /* Đường viền trắng xung quanh tiêu đề */
+        padding: 10px; /* Khoảng cách giữa chữ và đường viền */
+        border-radius: 5px; /* Bo góc cho đường viền */
+        display: inline-block; /* Giúp viền chỉ bao quanh nội dung */
+    
+    }
+    
+    .images-container {
+        display: flex;
+        overflow-x: auto; /* Cho phép cuộn ngang */
+        padding: 10px 0; /* Khoảng cách trên và dưới */
+    }
+    
+    .image-item {
+        flex: 0 0 auto; /* Giữ cho kích thước hình ảnh cố định */
+        margin: 10px; /* Khoảng cách giữa các hình ảnh */
+    }
+    
+    .image-item img {
+        width: 25rem; /* Đặt chiều rộng hình ảnh */
+        height: 10rem; /* Để chiều cao tự động */
+        border-radius: 8px; /* Bo góc cho hình ảnh */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho hình ảnh */
+        transition: transform 0.2s; /* Hiệu ứng khi hover */
+    }
+    
+    .image-item img:hover {
+        transform: scale(1.05); /* Phóng to hình ảnh khi hover */
+    }
+
+
+    .bouquet-guide {
+        display: flex; /* Sử dụng flex để sắp xếp các item */
+        justify-content: space-between; /* Căn giữa khoảng cách giữa các item */
+        margin-top: 20px; /* Khoảng cách giữa phần hình ảnh và phần hướng dẫn */
+        flex-wrap: wrap; /* Cho phép các item xuống dòng khi không đủ chỗ */
+    }
+    
+    .bouquet-item {
+        flex: 1; /* Cho mỗi item chiếm cùng 1 phần không gian */
+        max-width: 30%; /* Giới hạn chiều rộng tối đa cho mỗi item */
+        margin: 0 10px; /* Khoảng cách giữa các item */
+    }
+    
+    .bouquet-image img {
+        width: 24rem; /* Đảm bảo hình ảnh điền đầy trong item */
+        height: 34rem; /* Tự động chiều cao */
+        border-radius: 8px; /* Bo góc cho hình ảnh */
+        margin-bottom: 10px; /* Khoảng cách dưới hình ảnh */
+    }
+    
+    .bouquet-description {
+        text-align: left; /* Căn trái văn bản trong mô tả */
+    }
+    
+    .bouquet-description h3 {
+        margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+        color: #6d8758; /* Màu tiêu đề mô tả */
+    }
+    
+    .bouquet-description p {
+        margin: 5px 0; /* Khoảng cách giữa các đoạn văn */
+    }
+.video-section {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+   
+    background-color:  #fbfbfb;
+    color: white;
+    text-decoration: none;
+   
+
+}
+
+.video-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color:  #6d8758;
+}
+
+.video-container {
+    display: flex;
+    justify-content: space-around; /* Căn giữa các video */
+    flex-wrap: wrap;
+ }
+
+.video-item {
+    margin: 10px; /* Khoảng cách giữa các video */
+    flex: 0 1 30%; /* Chiều rộng hàm ý cho các video */
+    max-width: 300px; /* Chiều rộng tối đa cho mỗi video */
+    border: 1px solid #ddd; /* Đường viền cho khung video */
+    border-radius: 8px; /* Bo góc cho khung video */
+    overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
+}
+
+/* Điều chỉnh iframe để cho phù hợp với khung */
+.video-item iframe {
+    width: 100%; /* Đảm bảo video điền đầy khung */
+    height: 100%;
+}
+
+.video-item:hover  {
+    transform: scale(1.05); 
+}
+
+
+/* Footer Section Styling */
+.footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #b3b0b0;
+    color: rgb(19, 18, 18);
+    display: flex;
+}
+
+.footer-column {
+    width: 30%;
+}
+
+.footer-column h3 {
+    color: #6d8758;
+    margin-bottom: 10px;
+}
+
+.footer-column p,
+.footer-column a {
+    font-size: 15px;
+    color: #131313;
+}
+
+.footer-column .contact-form input,
+.footer-column .contact-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.footer-column .contact-form button {
+    background-color: #6d8758;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-column .contact-form button:hover {
     background-color: #5b7546;
 }
 
+/* Tab content styling */
 
-
-.lab-links {
-    margin-top: 20px;
-    list-style: none;
+.tab-link {
+    color: black; /* Màu bình thường */
+    text-decoration: none; /* Không gạch dưới */
 }
 
-.lab-links li {
-    margin: 5px 0;
+
+
+.tab-link:hover  {
+    color: #5b7546;;
 
 }
 
-body {
-    font-family: Arial, sans-serif;
-}
 
 .about-section {
     padding: 20px;
@@ -306,34 +484,44 @@ body {
 
 /* About Page Styling */
 .about-content {
+    font-size: 1,5rem;
     display: flex;
-    margin-top: 20px;
-}
-
-.about-content img {
-    max-width: 300px;
-    margin-right: 20px;
-}
-
-
-
-.about-content {
+    margin-top: 10rem;
     display: flex; /* Nếu bạn cần sắp xếp thêm nội dung, */
     justify-content: center; /* Canh giữa nội dung */
     align-items: center; /* Canh giữa dọc */
     
 }
-.about-intro p {
-    font-size: 16px; /* Kích thước chữ cho các đoạn */
+
+.about-content img {
+    max-width: 50rem;
+    margin-right: 10rem;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+.about-intro p {
+    font-size: 1.5rem ; /* Kích thước chữ cho các đoạn */
 }
+
+
 .highlight {
     font-weight: bold; /* In đậm văn bản */
     color: #5b7546; /* Màu chữ là xanh */
 }
+
+.Tabs-links {
+   
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+
+.tab-content {
+    text-align: center;
+    padding: 3rem;
+    border: 0.21rem solid #5b7546;
+    margin-top: 5rem ;
+    background-color: #f9fef4;
+    
+}
+
