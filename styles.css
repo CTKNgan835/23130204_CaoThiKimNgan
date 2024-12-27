@@ -293,7 +293,7 @@ p {
     padding: 0;       
     display: flex;   
     justify-content: space-around;  
-    background-color: rgb(248, 208, 156);  
+    background-color: rgb(250, 221, 183);  
     border-radius: 0.5rem ;  
     padding: 1rem ;  
 }
@@ -312,7 +312,7 @@ p {
 }
 
 .Tabs-links a:hover {
-    background-color: #d9b89a;  
+    background-color: #e2b78f;  
     border: 1px solid #a67c4d;  
 }
 
@@ -406,4 +406,13 @@ button:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
