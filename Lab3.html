@@ -1,257 +1,104 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chia Sẻ Tài Liệu Học Tập</title>
+    <title>Study Material Sharing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-  <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-            background: linear-gradient(to bottom, #b3e0ff, #ffffff, #b3e0ff);
-            color: #3e3b3b;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            text-align: center;
-            color: #ff7f7f;
-            margin-bottom: 30px;
-            width: 100%;
-        }
-
-        .search-container {
-            margin-bottom: 20px;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 300px;
-            margin-right: 10px;
-        }
-
-        .subjects-container {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .subject {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 20px;
-            background-color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            flex: 1;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .subject:hover {
-            background-color: #ffe0e0;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .subject-title {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 24px;
-            color: #f5acac;
-            padding: 10px;
-            border: 2px solid #ff7f7f;
-            border-radius: 8px;
-            width: fit-content;
-        }
-
-        .tab-container {
-            display: none;
-            margin-top: 20px;
-            border: 1px solid #faafaf;
-            border-radius: 8px;
-            background-color: #d1e7ff;
-            padding: 10px;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .tab {
-            cursor: pointer;
-            padding: 10px;
-            background-color: #ff7f7f;
-            color: white;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .tab:hover {
-            background-color: #ef7878;
-        }
-
-        .tab-content {
-            display: none;
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .back-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #ff7f7f;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: none;
-        }
-
-        .back-button:hover {
-            background-color: #ff7f7f;
-        }
-    </style>
-    <script>
-        function showTabs(subject) {
-            document.querySelector('.subjects-container').style.display = 'none';
-            const containerToShow = document.getElementById(subject + '-tabs');
-            containerToShow.style.display = 'block';
-
-            const title = document.getElementById('subject-title');
-            title.innerHTML = subject.charAt(0).toUpperCase() + subject.slice(1);
-
-            document.getElementById('back-button').style.display = 'block';
-        }
-
-        function showTabContent(subject, tab) {
-            document.querySelectorAll(`#${subject}-tabs .tab-content`).forEach(content => {
-                content.style.display = 'none';
-            });
-
-            const contentToShow = document.getElementById(`${subject}-${tab}`);
-            contentToShow.style.display = 'block';
-        }
-
-        function goBack() {
-            document.querySelector('.subjects-container').style.display = 'flex';
-            document.querySelectorAll('.tab-container').forEach(container => {
-                container.style.display = 'none';
-            });
-
-            document.getElementById('back-button').style.display = 'none';
-            document.getElementById('subject-title').innerHTML = '';
-        }
-
-        function searchSubjects() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            document.querySelectorAll('.subject').forEach(subject => {
-                const subjectText = subject.innerText.toLowerCase();
-                subject.style.display = subjectText.includes(query) ? 'block' : 'none';
-            });
-        }
-    </script>
+    <link rel="stylesheet" href="lab3.css">
 </head>
 <body>
-    <h1>Chia Sẻ Tài Liệu Học Tập</h1>
+    <h1>Study Material Sharing</h1>
 
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="Tìm kiếm môn học..." oninput="searchSubjects()">
+        <input type="text" id="search-input" placeholder="Search for subjects..." oninput="searchSubjects()">
     </div>
 
     <div class="subjects-container">
-        <div class="subject" data-subject="toan" onclick="showTabs('toan')">
-            <h2><i class="fas fa-calculator"></i> Môn Toán</h2>
-            <p>Khám phá các bài giảng và bài tập để củng cố kiến thức Toán học.</p>
+        <div class="subject" data-subject="math" onclick="showTabs('math')">
+            <h2><i class="fas fa-calculator"></i> Mathematics</h2>
+            <p>Explore lectures and exercises to reinforce your Mathematics knowledge.</p>
         </div>
 
-        <div class="subject" data-subject="vatly" onclick="showTabs('vatly')">
-            <h2><i class="fas fa-atom"></i> Môn Vật Lý</h2>
-            <p>Học tập lý thuyết và thực hành trong lĩnh vực Vật lý.</p>
+        <div class="subject" data-subject="physics" onclick="showTabs('physics')">
+            <h2><i class="fas fa-atom"></i> Physics</h2>
+            <p>Study theory and practice in the field of Physics.</p>
         </div>
 
-        <div class="subject" data-subject="hoahoc" onclick="showTabs('hoahoc')">
-            <h2><i class="fas fa-flask"></i> Môn Hóa Học</h2>
-            <p>Khám phá các hiện tượng và công thức trong Hóa học.</p>
+        <div class="subject" data-subject="chemistry" onclick="showTabs('chemistry')">
+            <h2><i class="fas fa-flask"></i> Chemistry</h2>
+            <p>Explore phenomena and formulas in Chemistry.</p>
         </div>
     </div>
 
     <div id="subject-title" class="subject-title"></div>
 
-    <div id="toan-tabs" class="tab-container">
-        <div class="tab" onclick="showTabContent('toan', 'lectures')">Bài Giảng</div>
-        <div class="tab" onclick="showTabContent('toan', 'exercises')">Bài Tập</div>
-        <div class="tab" onclick="showTabContent('toan', 'references')">Tài Liệu Tham Khảo</div>
+    <div id="math-tabs" class="tab-container">
+        <div class="tab" onclick="showTabContent('math', 'lectures')">Lectures</div>
+        <div class="tab" onclick="showTabContent('math', 'exercises')">Exercises</div>
+        <div class="tab" onclick="showTabContent('math', 'references')">Reference Materials</div>
 
-        <div id="toan-lectures" class="tab-content">
-            <h3>Bài Giảng</h3>
-            <p><a href="https://drive.google.com/file/d/1Ha5I_oQ5a0zXicVZy_imQjv2Dr2D2qoC/view" target="_blank">Bài Giảng Toán 12</a></p>
-            <p><a href="https://drive.google.com/file/d/1r_MxCYsD8nkBMJCA9_yZh3M95X5JPWZM/view" target="_blank">Bài Giảng Toán 11</a></p>
-            <p><a href="https://drive.google.com/file/d/1UUiwBdh7UHdKRHSryxCdQ6IA-WHqon0_/view" target="_blank">Bài Giảng Toán 10</a></p>
+        <div id="math-lectures" class="tab-content">
+            <h3>Lectures</h3>
+            <p><a href="https://drive.google.com/file/d/1Ha5I_oQ5a0zXicVZy_imQjv2Dr2D2qoC/view" target="_blank">Mathematics Lecture 12</a></p>
+            <p><a href="https://drive.google.com/file/d/1r_MxCYsD8nkBMJCA9_yZh3M95X5JPWZM/view" target="_blank">Mathematics Lecture 11</a></p>
+            <p><a href="https://drive.google.com/file/d/1UUiwBdh7UHdKRHSryxCdQ6IA-WHqon0_/view" target="_blank">Mathematics Lecture 10</a></p>
         </div>
-        <div id="toan-exercises" class="tab-content">
-            <h3>Bài Tập</h3>
-            <p><a href="https://toanmath.com/2016/12/sach-bai-tap-giai-tich-12-co-ban.html" target="_blank">Bài tập Toán 12</a></p>
-            <p><a href="https://toanmath.com/toanmath-pdf/sach-bai-tap-toan-11-tap-1-ket-noi-tri-thuc-voi-cuoc-song.html" target="_blank">Bài tập Toán 11</a></p>
-            <p><a href="https://toanmath.com/2016/12/bai-tap-giai-tich-10.html" target="_blank">Bài tập Toán 10</a></p>
+        <div id="math-exercises" class="tab-content">
+            <h3>Exercises</h3>
+            <p><a href="https://toanmath.com/2016/12/sach-bai-tap-giai-tich-12-co-ban.html" target="_blank">Mathematics Exercises 12</a></p>
+            <p><a href="https://toanmath.com/toanmath-pdf/sach-bai-tap-toan-11-tap-1-ket-noi-tri-thuc-voi-cuoc-song.html" target="_blank">Mathematics Exercises 11</a></p>
+            <p><a href="https://toanmath.com/2016/12/bai-tap-giai-tich-10.html" target="_blank">Mathematics Exercises 10</a></p>
         </div>
-        <div id="toan-references" class="tab-content">
-            <h3>Tài Liệu Tham Khảo</h3>
-            <p><a href="https://drive.google.com/file/d/1YrjTrK0YsXhGQ9DNweIDr9PVy8pOsdrs/view" target="_blank">Tài liệu Toán nâng cao</a></p>
+        <div id="math-references" class="tab-content">
+            <h3>Reference Materials</h3>
+            <p><a href="https://drive.google.com/file/d/1YrjTrK0YsXhGQ9DNweIDr9PVy8pOsdrs/view" target="_blank">Advanced Mathematics Materials</a></p>
         </div>
     </div>
 
-    <div id="vatly-tabs" class="tab-container">
-        <div class="tab" onclick="showTabContent('vatly', 'lectures')">Bài Giảng</div>
-        <div class="tab" onclick="showTabContent('vatly', 'exercises')">Bài Tập</div>
-        <div class="tab" onclick="showTabContent('vatly', 'references')">Tài Liệu Tham Khảo</div>
+    <div id="physics-tabs" class="tab-container">
+        <div class="tab" onclick="showTabContent('physics', 'lectures')">Lectures</div>
+        <div class="tab" onclick="showTabContent('physics', 'exercises')">Exercises</div>
+        <div class="tab" onclick="showTabContent('physics', 'references')">Reference Materials</div>
 
-        <div id="vatly-lectures" class="tab-content">
-            <h3>Bài Giảng</h3>
-            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/ly-12-co-ban_79202192648.pdf" target="_blank">Bài giảng Vật lý cơ bản 12</a></p>
-            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/ly-11-co-ban_79202192648.pdf" target="_blank">Bài giảng Vật lý cơ bản 11</a></p>
-            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/ly-10-co-ban_79202192648.pdf" target="_blank">Bài giảng Vật lý cơ bản 10</a></p>
+        <div id="physics-lectures" class="tab-content">
+            <h3>Lectures</h3>
+            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/ly-12-co-ban_79202192648.pdf" target="_blank">Basic Physics Lecture 12</a></p>
+            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/ly-11-co-ban_79202192648.pdf" target="_blank">Basic Physics Lecture 11</a></p>
+            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/ly-10-co-ban_79202192648.pdf" target="_blank">Basic Physics Lecture 10</a></p>
         </div>
-        <div id="vatly-exercises" class="tab-content">
-            <h3>Bài Tập</h3>
-            <p><a href="https://drive.usercontent.google.com/download?id=1TcwInwJLIkDds_tN4tF5bxx6beTH9bGe&export=download&authuser=0" target="_blank">Bài tập Vật lý 12</a></p>
-            <p><a href="https://drive.usercontent.google.com/download?id=1Av0zkvRwEob4Vtpmp9j0yHqQTaapmeZp&export=download&authuser=0" target="_blank">Bài tập Vật lý 11</a></p>
-            <p><a href="https://drive.usercontent.google.com/download?id=15O7YyAcX88KaODp_tgFAJzBkaCOdSQnh&export=download&authuser=0" target="_blank">Bài tập Vật Lý 10 </a></p>
+        <div id="physics-exercises" class="tab-content">
+            <h3>Exercises</h3>
+            <p><a href="https://drive.usercontent.google.com/download?id=1TcwInwJLIkDds_tN4tF5bxx6beTH9bGe&export=download&authuser=0" target="_blank">Physics Exercises 12</a></p>
+            <p><a href="https://drive.usercontent.google.com/download?id=1Av0zkvRwEob4Vtpmp9j0yHqQTaapmeZp&export=download&authuser=0" target="_blank">Physics Exercises 11</a></p>
+            <p><a href="https://drive.usercontent.google.com/download?id=15O7YyAcX88KaODp_tgFAJzBkaCOdSQnh&export=download&authuser=0" target="_blank">Physics Exercises 10 </a></p>
         </div>
-        <div id="vatly-references" class="tab-content">
-            <h3>Tài Liệu Tham Khảo</h3>
-            <p><a href="https://drive.usercontent.google.com/download?id=1IGbjnHoSCKhZOeIEH8QVIFeQRh8m9Rdi&export=download&authuser=0" target="_blank">Tài liệu tham khảo Vật lý nâng cao</a></p>
-        </div>
-    </div>
-
-    <div id="hoahoc-tabs" class="tab-container">
-        <div class="tab" onclick="showTabContent('hoahoc', 'lectures')">Bài Giảng</div>
-        <div class="tab" onclick="showTabContent('hoahoc', 'exercises')">Bài Tập</div>
-        <div class="tab" onclick="showTabContent('hoahoc', 'references')">Tài Liệu Tham Khảo</div>
-
-        <div id="hoahoc-lectures" class="tab-content">
-            <h3>Bài Giảng</h3>
-            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/hh12_189202116149.pdf" target="_blank">Bài giảng Hóa học 12</a></p>
-        </div>
-        <div id="hoahoc-exercises" class="tab-content">
-            <h3>Bài Tập</h3>
-            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/hh12_189202116149.pdf" target="_blank">Bài tập Hóa học 12</a></p>
-        </div>
-        <div id="hoahoc-references" class="tab-content">
-            <h3>Tài Liệu Tham Khảo</h3>
-            <p><a href="https://drive.usercontent.google.com/download?id=10eeuf3Cxi8a4Evg3Yn8L3nGkDP6Or4Tv&export=download&authuser=0&confirm=t&uuid=adb3f885-610f-410a-886b-9c7bb85569e5&at=AN_67v2hpUB0vFM7gbQZVo9YrraV:1729188069814" target="_blank">Tài liệu tham khảo Hóa học nâng cao</a></p>
+        <div id="physics-references" class="tab-content">
+            <h3>Reference Materials</h3>
+            <p><a href="https://drive.usercontent.google.com/download?id=1IGbjnHoSCKhZOeIEH8QVIFeQRh8m9Rdi&export=download&authuser=0" target="_blank">Advanced Physics Reference Materials</a></p>
         </div>
     </div>
 
-    <button id="back-button" class="back-button" onclick="goBack()">Quay Lại</button>
+    <div id="chemistry-tabs" class="tab-container">
+        <div class="tab" onclick="showTabContent('chemistry', 'lectures')">Lectures</div>
+        <div class="tab" onclick="showTabContent('chemistry', 'exercises')">Exercises</div>
+        <div class="tab" onclick="showTabContent('chemistry', 'references')">Reference Materials</div>
 
+        <div id="chemistry-lectures" class="tab-content">
+            <h3>Lectures</h3>
+            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/hh12_189202116149.pdf" target="_blank">Chemistry Lecture 12</a></p>
+        </div>
+        <div id="chemistry-exercises" class="tab-content">
+            <h3>Exercises</h3>
+            <p><a href="https://84864c160d.vws.vegacdn.vn//Data/hcmedu/thptnguyentatthanh/2021_9/hh12_189202116149.pdf" target="_blank">Chemistry Exercises 12</a></p>
+        </div>
+        <div id="chemistry-references" class="tab-content">
+            <h3>Reference Materials</h3>
+            <p><a href="https://drive.usercontent.google.com/download?id=10eeuf3Cxi8a4Evg3Yn8L3nGkDP6Or4Tv&export=download&authuser=0&confirm=t&uuid=adb3f885-610f-410a-886b-9c7bb85569e5&at=AN_67v2hpUB0vFM7gbQZVo9YrraV:1729188069814" target="_blank">Advanced Chemistry Reference Materials</a></p>
+        </div>
+    </div>
 
+    <button id="back-button" class="back-button" onclick="goBack()">Go Back</button>
+    <script src="lab3.js"></script>
 </body>
 </html>

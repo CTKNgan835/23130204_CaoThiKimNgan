@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account / Edit Account</title>
+    <link rel="stylesheet" href="lab1.css">  
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Create Account</h1>
+    <form id="accountForm" onsubmit="return createAccount(event)">
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username" maxlength="255" required>
+            <div class="validation-message" id="usernameError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" maxlength="255" required>
+            <button type="button" onclick="togglePassword()">Show/Hide</button>
+            <div class="validation-message" id="passwordError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter email address" maxlength="255" required>
+            <div class="validation-message" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="fullName">Full Name (optional)</label>
+            <input type="text" id="fullName" placeholder="Enter full name">
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" required>
+                <option value="">Select role</option>
+                <option value="admin">Administrator</option>
+                <option value="user">User</option>
+            </select>
+            <div class="validation-message" id="roleError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="profilePicture">Profile Picture</label>
+            <input type="file" id="profilePicture" accept="image/*">
+            <div><img id="preview" style="max-width: 100%; display: none;" alt="Profile Picture"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Account Creation Date</label>
+            <input type="text" class="read-only" value="<?php echo date('Y-m-d H:i'); ?>" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Last Updated Date</label>
+            <input type="text" class="read-only" value="<?php echo date('Y-m-d H:i'); ?>" readonly>
+        </div>
+
+        <button type="submit" class="button button-primary" id="submitButton">Create Account</button>
+        <button type="button" class="button button-secondary" onclick="cancel()">Cancel</button>
+    </form>
+
+    <div class="success-message" id="successMessage">Account created successfully!</div>
+</div>
+
+<script src="lab1.js"></script>
+
+</body>
+</html>

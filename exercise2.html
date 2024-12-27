@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Detail</title>
+    <link rel="stylesheet" href="lab2.css">
+</head>
+<body>
+    <div class="exercise-container">
+        <h1>Exercise: Exercise Title</h1>
+        <p>Exercise Description: Detailed description of the exercise.</p>
+
+        <h2>Code Area</h2>
+        <textarea id="codeArea" rows="10" cols="50" placeholder="Enter your code here..."></textarea>
+
+        <div>
+            <button onclick="runCode()">Run Code</button>
+            <button onclick="clearCode()">Clear Code</button>
+            <button onclick="submitCode()">Submit Code</button>
+        </div>
+
+        <h3>Test Cases</h3>
+        <div>
+            <label for="customTestCase">Create Custom Test Case:</label>
+            <input type="text" id="customTestCase" placeholder="Enter input">
+            <button onclick="addTestCase()">Add Test Case</button>
+        </div>
+
+        <h3>Submission Result</h3>
+        <div id="submissionResult"></div>
+    </div>
+
+    <script src="lab2.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+.section { margin-bottom: 20px; }
+.section-title { font-weight: bold; }
+.content-item { margin-left: 20px; }
+.icon { margin-right: 5px; }
+.resources { color: blue; cursor: pointer; }
+.hero {
+    background-color: #f8f9fa;
+}
+
+/* Container for layout */
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Line 1: Header Section */
+.header {
+display: grid;
+grid-template-columns: 1fr 2fr 1fr 1fr auto auto;
+align-items: center;
+background-color: white;
+padding: 10px 2px 4px; /* Chỉnh sửa để chỉ định các giá trị padding hợp lệ */
+margin-bottom: 20px;
+}
+
+.header .home {
+    font-size: 16px;
+    color: #0073b1;
+    text-decoration: none;
+}
+
+.header .title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.header .leave-rating,
+.header .yours-proies {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.header button {
+    padding: 8px 16px;
+    background-color: #0073b1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.header .dots {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Line 2: Split into two sections */
+.split-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* Left column: Video Section */
+.left-column {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-section {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 ratio */
+    overflow: hidden;
+}
+
+.video-section iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Line 4: Video Title */
+h2.video-title {
+    font-size: 18px;
+    margin-top: 0;
+    color: #333;
+}
+
+/* Tabs Section */
+.tabs {
+    background-color: white;
+    padding: 10px;
+    display: flex; /* Sử dụng flex để định vị */
+    justify-content: flex-start; /* Đặt nội dung ở bên trái */
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px; /* Khoảng cách bên dưới */
+}
+
+.tabs a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+.tabs button {
+    padding: 8px 16px;
+    background-color: #0073b1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.tabs button:last-child {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Line 5: Rating and Views */
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.rating span {
+    color: #f4a941;
+    margin-right: 5px;
+}
+
+.rating p {
+    margin-left: 10px;
+    color: #666;
+}
+
+/* Line 6: Update date */
+.updated {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Line 7: Video description */
+.description {
+    font-size: 13px;
+    color: #3f3c3c;
+    margin-top: 16px;
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột */
+    gap: 20px; /* Khoảng cách giữa 2 cột */
+    border: 1px solid #ccc; /* Đường viền */
+    border-radius: 8px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong */
+    background-color: #fff; /* Nền trắng cho khung */
+}
+
+.description ul {
+    
+    margin-left: 20px; /* Đặt lề cho danh sách */
+}
+
+/* Right column: Course content (different course) */
+.right-column {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-details {
+    margin-bottom: 20px;
+}
+
+.course-details h2 {
+    font-size: 18px;
+    margin-top: 0;
+    color: #333;
+}
+
+.course-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.course-details .rating {
+    display: flex;
+    align-items: center;
+}
+
+.course-details .rating span {
+    color: #f4a941;
+    margin-right: 5px;
+}
+
+.sections-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sections-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.section-header {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.section-duration {
+    font-size: 14px;
+    color: #666;
+}
+
+.what-you-learn ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.what-you-learn li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #666;
+}

@@ -1,234 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flower - Home</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environment wed</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <div class="navbar">
-            <h1 class="logo">Ctkn</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="tab-link">Home</a></li>
-                    <li><a href="about.html" class="tab-link">About</a></li>
-                    <li><a href="tabs.html" class="tab-link">Tabs</a></li>
+   
+    <header class= "header">
+        <div class="logo">
+      <h1>CTKN<span class="highlight">Environment</span></h1>
+      <p>Published at the CTKN of the Environment</p>
+    </div>
+    <nav class="navbar">
+        <ul class="nav-items">
+          <li id="home"><a href="#home">Home</a></li>
+          <li><a href="about.html" class="tab-link">About</a></li>
+          <li><a href="tabs.html" class="tab-link">Tabs</a></li>
+       
+          <li id="explore" class="dropdown">
+            <span>Explore</span>
+            <ul id="explore-menu" class="hidden">
+                    <li class="explore-item" data-target="categories"><a href="#">Topics</a></li>
+                    <li class="explore-item" data-target="analysis"><a href="#">Analysis</a></li>
+                    <li class="explore-item" data-target="support"><a href="#">Donate</a></li>
                 </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>We tell stories with flowers</h2>
-            <a href="#CTKN" class="ctkn-btn" onclick="scrollToShop()"></a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <h2>Our Services</h2>
-        <div class="services-container">
-            <div class="service-item">
-                <img src="https://hoatuoishop.com/wp-content/uploads/2023/06/hoa-bo-gia-re-4.jpg" alt="Weddings" width="150" height="100">
-                <p>Weddings</p>
-            </div>
-            <div class="service-item">
-                <img src="https://hoavily.com/upload/hinhanh/thumb/bo-hoa-sinh-nhat-nang-tho718.jpg" alt="Private Events" width="150" height="100">
-                <p>Private Events</p>
-            </div>
-            <div class="service-item">
-                <img src="https://123flower.net/upload/hinhanh/bo-hoa-dep-nhat-em-la-ca-cuoc-doi-anh.jpg" alt="Subscription" width="150" height="100">
-                <p>Flowers by Subscription</p>
-            </div>
-            <div class="service-item">
-                <img src="https://pbs.twimg.com/media/GEHTcjoW4AATSq8.jpg" alt="Garden Designs" width="150" height="100">
-                <p>Garden Designs</p>
-            </div>
-        </div>
-    </section>
-
-  
-
-    <!-- Images Section -->
-<section class="images-section">
-    <h2>Hướng dẫn cắm hoa.</h2>
-    <div class="images-container">
-        <div class="image-item">
-            <img src="https://storage.googleapis.com/cdn_dlhf_vn/blog/Cam-hoa-kieu-chu-L-1-768x480.png" alt="Flowers 1">
-        </div>
-        <div class="image-item">
-            <img src="https://storage.googleapis.com/cdn_dlhf_vn/blog/2017/11/Cam-hoa-kieu-luoi-liem.jpg" alt="Flowers 2">
-        </div>
-        <div class="image-item">
-            <img src="https://dienhoaxanh.com/wp-content/uploads/2021/12/kieu-cam-hoa-hinh-doc.jpg" alt="Flowers 3">
-        </div>
+            </li>
+              </ul>
+                <div id="search-icon" class="search-trigger"> Search</div>
+         
+        </ul>
+      </nav>
+  </header>
    
-
-        <div class="image-item">
-            <img src="https://charmingflowers.com.vn/wp-content/uploads/2020/05/kim-tu-thap.jpg" alt="Flowers 4">
-        </div>
-        <div class="image-item">
-            <img src="https://shophoavungtau.com/wp-content/uploads/2022/12/kieu-cam-hoa-hinh-chu-l.png" alt="Flowers 5">
-        </div>
-        <div class="image-item">
-            <img src="https://hoatuoi9x.com/wp-content/uploads/2021/08/hoa-tuoi-hai-phong-cach-cam-hoa-lang-5.jpg" alt="Flowers 6">
-        </div>
-        <div class="image-item">
-            <img src="https://storage.googleapis.com/cdn_dlhf_vn/blog/2017/11/Cam-hoa-kieu-mai-vom.jpg" alt="Flowers 7">
-        </div>
-        
-        <div class="image-item">
-            <img src="https://file.hstatic.net/200000427529/article/huong-dan-cam-hoa-hinh-trang-luoi-liem_3c5d099b8bf04338b1a8a44cf5f8a8ac.png" alt="Flowers 8">
-        </div>
-       
-   
-</div>
-</section>
-   
-<!-- Bouquet Guide Section -->
-<section class="images-section">
-    <h2>Hướng dẫn bó hoa.</h2>
-    <div class="images-container">
-       
+    <!-- Thanh tìm kiếm -->
+    <div id="search-bar-container" class="hidden">
+      <input type="text" id="search-input" placeholder="Search topics...">
+      <ul id="search-suggestions" class="hidden"></ul>
     </div>
-
-    <div class="bouquet-guide">
-        <div class="bouquet-item">
-            <div class="bouquet-image">
-                <img src="https://hoatuoidanang.net/wp-content/uploads/2020/10/hoa-tuoi-da-nang-y-nghia-hoa-huong-duong.jpg" alt="Bouquet Example 1">
-            </div>
-            <div class="bouquet-description">
-                <h3>Cách bó hoa hướng dương một bông</h3>
-                <p><strong>Bước 1:</strong> Để cành hoa đặt ở trung tâm.</p>
-                <p><strong>Bước 2:</strong> Để làm nổi bật bó hoa bạn có thể thêm các cành hoa dương xỉ hoặc các loại lá nhỏ để đối xứng nhau.</p>
-                <p><strong>Bước 3:</strong> Sau khi định hình được dùng băng keo quấn quanh để định hình.</p>
-                <p><strong>Bước 4:</strong> Dùng giấy nilon để gói gọn. Sau đó thêm 1 giấy gói màu tùy theo sở thích và dùng nơ buộc lại.</p>
-            </div>
-        </div>
-
-        <div class="bouquet-item">
-            <div class="bouquet-image">
-                <img src="https://bonn.vn/wp-content/uploads/2020/10/bo-hoa-huong-duong-dep-3-bong.jpg" alt="Bouquet Example 2">
-            </div>
-            <div class="bouquet-description">
-                <h3>Cách bó hoa hướng dương 3 bông</h3>
-                <p><strong>Bước 1:</strong> Bạn cần chọn những cành hoa hướng dương to đều nhau.</p>
-                <p><strong>Bước 2:</strong> Dùng các giấy mếch nhám trắng rồi bọc hoa.</p>
-                <p><strong>Bước 3:</strong> Sau đó dùng các giấy màu giấy gói xi bọc tiếp vào bó hoa điều chỉnh sao cho cao hơn giấy mếch nhám trắng.</p>
-                <p><strong>Bước 4:</strong> Dùng dây ruy băng buộc lại và thêm nơ để bó hoa trở nên tươi xinh hơn.</p>
-            </div>
-        </div>
-
-        <div class="bouquet-item">
-            <div class="bouquet-image">
-                <img src="https://flowercorner.b-cdn.net/image/cache/catalog/products/August%202023/bo-hoa-huong-duong-loi-tri-an.jpg.webp" alt="Bouquet Example 3">
-            </div>
-            <div class="bouquet-description">
-                <h3>Cách bó hoa hướng dương 5 bông</h3>
-                <p><strong>Bước 1:</strong> Bạn nên sắp xếp 5 bông hoa chia thành hoa cao hoa thấp xen kẽ nhau. Thêm điểm nhấn bằng các lá hoa nhỏ như hoa baby tím,… Sau khi sắp xếp xong rồi dùng băng dính để cố định bó hoa.</p>
-                <p><strong>Bước 2:</strong> Sau đó dùng các giấy gói xếp chồng lên nhau và điều chỉnh sao để không bị gấp nếp.</p>
-                <p><strong>Bước 3:</strong> Bước cuối cùng trong cách bó hoa hướng dương 5 bông là buộc ruy băng lại và thêm nơ ruy băng cho thêm đẹp nhé.</p>
-            </div>
-        </div>
-    </div>
-
-
-<div class="bouquet-guide">
-    <div class="bouquet-item">
-        <div class="bouquet-image">
-            <img src="https://lilydesign.vn/uploads/thumbnails/800/2016/11/bo-hoa-hong-do-dang-dai-tang-em-ldnk140.jpg" alt="Bouquet Example 4">
-        </div>
-        <div class="bouquet-description">
-            <h3>Bó bông hồng dài </h3>
-            <p><strong>Bước 1:</strong> Sử dụng 1 bông hồng kết hợp với lá và cành của những loài cây khác, bạn có thể sử dụng lá nguyệt quế.</p>
-            <p><strong>Bước 2:</strong> Sử dụng giấy kính để bọc phía dưới bó hoa. Tiếp theo kết hợp giấy nhún ở phía trên, hãy lấy 2 tờ giấy bằng nhau (bề ngang của giấy bằng với chiều ngang của bó hoa) và đặt lệch nhau và sử dụng ghim bấm để bấm cố định lại</p>
-            <p><strong>Bước 3:</strong> Bạn chọn hoa và căn chỉnh cho phù hợp, tùy theo sở thích của bạn sao cho vừa ý với 1 bông hồng dài và đẹp.</p>
-            <p><strong>Đây là cách bó hoa hồng đơn giản nhất.</strong>
-        </div>
-    </div>
-
-    <div class="bouquet-item">
-        <div class="bouquet-image">
-            <img src="https://tiemhoathanhxuan.com.vn/upload/elfinder/cach-bo-hoa-hong-don-gian-4.jpg" alt="Bouquet Example 5">
-        </div>
-        <div class="bouquet-description">
-            <h3>Cách bó hoa hồng tròn</h3>
-            <p><strong>Bước 1:</strong> Cách bó hoa này cũng cực kỳ đơn giản, bạn chỉ cần chuẩn bị bó những bông bồng thành vòng tròn ở giữa và xung quanh bên ngoài sẽ điểm thêm ít hoa baby trắng cho bó hồng của mình được tròn lại là đã hoàn thành tương đối rồi.</p>
-            <p><strong>Bước 2:</strong> Tiếp theo bạn chỉ cần sử dụng giấy gói hoa gấp nhún và bó xung quanh bên ngoài tạo thành một vòng tròn đẹp, rồi cột thêm một chiếc nơ xinh xắn bên dưới bó hoa là đã hoàn thành.</p>
-            <p><strong> Một bó hoa đơn giản vậy bạn có thể dành tặng cho người mình yêu thương vào các dịp lễ, sinh nhật,...sẽ rất ý nghĩa </strong>
-        </div>
-    </div>
-
-    <div class="bouquet-item">
-        <div class="bouquet-image">
-            <img src="https://hoaphuquy.com/wp-content/uploads/2021/03/bo-hoa-baby-em-la-duy-nhat-030321.jpg" alt="Bouquet Example 6">
-        </div>
-        <div class="bouquet-description">
-            <h3>Cách bó hoa hồng theo phong cách cổ điển</h3>
-            <p><strong>Bước 1:</strong> Sắp xếp năm bông hồng thành hình tròn.</p>
-            <p><strong>Bước 2:</strong> Với cách bó hoa hồng đơn giản này, bạn chỉ cần chọn lựa 1 bông hồng thật đẹp, thật tươi sau đó sử dụng giấy bó để bọc bên ngoài bông hồng, bạn có thể tạo sự thu hút bằng cách gói bằng loại giấy sáng tạo và lạ mắt, sau đó đính thêm một chiếc nơ thật xinh để tạo điểm nhấn</p>
-            <p><strong>Bước 3:</strong> Quấn chặt bằng băng dính xong bọc bằng giấy gói.</p>
-            <p><strong>Bước 4:</strong> Kết thúc với ruy băng trang trí tạo nên sự hoàn hảo cho bó hoa.</p>
-            <p><strong>Mẫu bó hoa hồng 1 bông thể hiện tình yêu duy nhất</strong>
-        </div>
-    </div>
-</div>
-</section>
     
-    <!-- Video Section -->
-    <section class="video-section">
-        <h2>Videos hướng dẫn bó hoa và cấm hoa</h2>
-         <div class="video-container">
-     
-        <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Mt9lzO7g_V8" frameborder="0" allowFullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OFfD69MhhPw" frameborder="0" allowFullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/IH9B_wqRNHg" frameborder="0" allowFullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/PY0yk2akfGQ" frameborder="0" allowFullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/aEeH9xCndDM" frameborder="0" allowFullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/L5WwtvRKcyo" frameborder="0" allowFullscreen></iframe>
-        </div>
-    </div>
-</section>
-       
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-column">
-            <h3>CTKN</h3>
-            <p>Từ người mới bắt đầu đến thành thạo về việc cắm hoa.</p>
-            <p>Contact: 0374.***.***</p>
-            <p>Email: **********@gmail.com</p>
+  <main>
+    <section id="featured-article" class="featured-article">
+      <img src="https://media.istockphoto.com/id/177794699/photo/grey-wolf-portrait.jpg?s=612x612&w=0&k=20&c=vEUo0UKAKeCIIm35zU0zR7XDOf-4AKXvJWLZGx4BVws=" alt="Wolf Image">
+      <div class="article-content">
+        <h2>As Wolf Populations Rebound, an Angry Backlash Intensifies</h2>
+        <p>The reintroduction of endangered wolves to Yellowstone National Park 30 years ago was a major conservation victory. But as wolves have spread across the West, anger and resentment at the apex predator has escalated, with hunters in some states increasingly targeting them.</p>
+        <p><strong>By Jim Robbins</strong></p>
+      </div>
+    </section>
+
+
+    <section class="articles-grid">
+      <article>
+        <h4>Greening Concrete: A Major Emitter Inches Toward Carbon Neutrality</h4>
+        <p>Concrete is the most ubiquitous man-made building material on the planet, but making it generates massive amounts of CO2 emissions. Companies are experimenting with ways to green the process, from slashing the use of limestone to capturing the carbon generated when it's burned.</p>
+        <p>By CHRISTIAN SCHWÄGERL</p>
+      </article>
+      <article>
+        <h4>Will Hydrogen Hubs Be a Clean Energy Boom or Boondoggle?</h4>
+        <p>As part of a $7 billion investment in hydrogen, the U.S. Department of Energy is committed to building a network of hydrogen facilities and pipelines centered in southeast Pennsylvania. Critics are questioning the project's expense and its net savings in carbon emissions.</p>
+        <p>By REBECCA MCCARTHY</p>
+      </article>
+      <article>
+        <h4>As Ocean Waters Warm, a Race to Breed Heat-Resistant Coral</h4>
+        <p>Around the world, researchers are working on a range of projects that aim to enhance corals' resistance to marine heat waves. In a promising sign, a U.K. team recently became the first to quantify an uptick in heat tolerance among adult corals selectively bred for the trait.</p>
+        <p>By SOFIA QUAGLIA</p>
+      </article>
+
+    </section>
+
+    <div id="analysis" class="section analysis">
+    <section class="categories">
+      <div class="category">
+        <h3>ANALYSIS</h3>
+        <ul>
+          <li><a href="#">TRUMP 2.0: THIS TIME THE STAKES FOR CLIMATE ARE EVEN HIGHER</a> </li>
+          <li><a href="#">Donald Trump has promised to halt federal climate action and repeal the Biden-era Inflation Reduction Act, which provides unprecedented spending for clean energy.
+             The market momentum for renewables and efforts by states and cities may be the only hope for U.S. climate progress.
+             Renewable Energy
+             A clean energy economy requires the construction of a massive number of new wind and solar farms and the associated electricity storage and transmission infrastructure. 
+             Such facilities are needed to replace all the old coal plants and most of the natural gas plants, and to provide the added power needed for electrifying vehicles, building heating systems, powering energy-intensive industries, meeting the demand for data centers for artificial intelligence and cryptocurrency, and other new loads. 
+             In 2022 Congress passed the Inflation Reduction Act (IRA), which is providing hundreds of millions of dollars in subsidies and tax breaks for clean energy. 
+             The IRA, coupled with rapidly dropping costs, has spurred a large upsurge in new projects.
+             </a></li>
+          <li><a href="#">Motor Vehicles
+            A critical area where the new Trump administration is expected to slash environmental rules is motor vehicles, which are the largest source of greenhouse gas emissions in the U.S. 
+            Federal agencies set emission and fuel economy standards for motor vehicles. 
+            Under both Presidents Obama and Biden (with a halt by President Trump in between) both these standards were strengthened, leading to progressively cleaner cars. 
+            Regulations adopted late in the Biden administration are even stronger.</a>
+        </ul>
+      </div>
+    </section>
+</div>
+  </main>
+  <div id="support" class="section support">
+    <section class="support">
+        <div class="support-box">
+            <h3>Support Environment</h3>
+            <p>Environment's in-depth reporting, analysis, and commentary depend on readers like you.</p>
+            <button id="donateBtn">Donate Now</button>
         </div>
-        <div class="footer-column">
-            <h3>Time</h3>
-            <p>Monday - Friday: 8.00pm - 21.00pm</p>
-            <p>Saturday - Sunday: 8.00pm - 20.00pm</p>
-        </div>
-        <div class="footer-column">
-            <h3>Let us reach you</h3>
-            <form class="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Phone Number" required>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </footer>
+    </section>
+</div>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" style="width: 100%; padding: 10px; margin: 10px 0;">
+        <input type="password" id="password" placeholder="Password" style="width: 100%; padding: 10px; margin: 10px 0;">
+        <button id="loginBtn">Login</button>
+    </div>
+</div>
+
+
+   <div id="categories" class="section categories climate">
+     <section class="categories">
+           <div class="category">
+                            <h3> ☀️ Climate</h3>
+                            <ul>
+                                <li><a href="#">Will UN Carbon Market Work?</a></li>
+                                <li><a href="#">Trump 2.0: This Time the stakes are Even Higher</a></li>
+                                <li><a href="#">As disinformation Swirls, meteorologists are facing threats</a></li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3> ⚡️ Energy</h3>
+                            <ul>
+                                <li><a href="#">As drought shrivels hydro, this african nation pivots to Solar</a></li>
+                                <li><a href="#">Will hydrogen hubs be a clean energy boom or boondoggle?</a></li>
+                                <li><a href="#">Why Taiwan and Its tech industry are facing an energy crisis</a></li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3> 🌳 Biodiversity</h3>
+                            <ul>
+                                <li><a href="#">As wolf populations rebound, an angry backlash intensifies</a></li>
+                                <li><a href="#">Brazil hopes to make the Amazon a model for a green economy</a></li>
+                                <li><a href="#">Ukraine rewilding: Will nature be allowed to revive when war ends?</a></li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3> 🌊 Oceans</h3>
+                            <ul>
+                                <li><a href="#">As Ocean waters warm, a race to breed heat-resistant coral</a></li>
+                                <li><a href="#">Researchers parse the future of plankton in an Ever-Warmer world</a></li>
+                                <li><a href="#">Dire straits: Can a fishing ban save the Elusive European Eel?</a></li>
+                            </ul>
+                        </div>
+                
+                        <div class="category">
+                            <h3> 🥕 Food & Agriculture</h3>
+                            <ul>
+                                <li><a href="#">On navajo lands, ancient ways are restoring the parched Earth</a></li>
+                                <li><a href="#">How agroforestry could help revitalize America's corn belt</a></li>
+                                <li><a href="#">Tracking Illicit Brazilian beef from the Amazon to your burger</a></li>
+                            </ul>
+                        </div>
+                
+                        <div class="category">
+                            <h3> ♻️ Solution</h3>
+                            <ul>
+                                <li><a href="#">Greening concrete: A major emitter inches toward carbon neutrality</a></li>
+                                <li><a href="#">A solitary herder cares for his goats and the bay area hills</a></li>
+                                <li><a href="#">For 60,000 years, Australia's first nations have put fire to good use</a></li>
+                            </ul>
+                        </div>
+                
+                        <div class="category">
+                            <h3> 🏬 Cities</h3>
+                            <ul>
+                                <li><a href="#">Eye on the fertile crescent: Life along the Mideast's fabled rivers</a></li>
+                                <li><a href="#">Slowly but surely, U.S. School buses are starting to electrify</a></li>
+                                <li><a href="#">Faced with heavier rains, cities scramble to control polluted runoff</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="category">
+                          <h3> 📚 Policy</h3>
+                          <ul>
+                              <li><a href="#">Why we need a strong global agreement on plastics pollution</a></li>
+                              <li><a href="#">Fortress conservation: Can a Congo tribe return to its forest?</a></li>
+                              <li><a href="#">On gulf coast, an activist rallies her community against gas exports</a></li>
+                          </ul>
+                      </div>
+                    </section>
+                </div>
+
+  <footer>
+    <p>&copy; 2024 CTKN Environment. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
 </body>
 </html>

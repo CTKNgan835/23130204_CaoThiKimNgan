@@ -1,0 +1,118 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #ffffff; /* Nền trắng */
+    color: #333333; /* Màu chữ tối để dễ đọc */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: #2a6496; /* Xanh biển cho tiêu đề */
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b0c4de; /* Xanh nhạt cho viền */
+    width: 300px;
+    margin-right: 10px;
+    transition: border 0.3s; /* Hiệu ứng chuyển tiếp khi focus */
+}
+
+input[type="text"]:focus {
+    border-color: #2a6496; /* Đổi màu viền khi focus */
+}
+
+.subjects-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.subject {
+    border: 1px solid #b0c4de; /* Xanh nhạt cho viền */
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff; /* Nền trắng cho các thẻ bài */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    flex: 1;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bóng nhẹ cho thẻ bài */
+    text-align: center;
+}
+
+.subject:hover {
+    background-color: #e0f7fa; /* Màu xanh nhạt khi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Bóng đậm hơn khi hover */
+}
+
+.subject-title {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 20px; /* Kích thước văn bản tiêu đề thẻ bài */
+    color: #2a6496; /* Màu xanh biển cho tiêu đề thẻ bài */
+    padding: 10px;
+    border: 2px solid #b0c4de; /* Xanh nhạt cho viền tiêu đề */
+    border-radius: 8px;
+    width: fit-content;
+    background-color: #f0f8ff; /* Nền xanh nhạt cho tiêu đề */
+}
+
+.tab-container {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #b0c4de; /* Xanh nhạt cho viền */
+    border-radius: 8px;
+    background-color: #ffffff; /* Nền trắng */
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #d7e1f9; /* Xanh biển cho tab */
+    color: rgb(123, 146, 250); /* Màu trắng cho chữ trong tab */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp khi hover */
+}
+
+.tab:hover {
+    background-color: #1c4d70; /* Tối màu khi hover */
+}
+
+.tab-content {
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #c7e0f6; /* Xanh biển cho nút trở về */
+    color: rgb(3, 3, 14); /* Màu trắng cho chữ nút */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp */
+    display: none; /* Hiện nút này theo điều kiện */
+}
+
+.back-button:hover {
+    background-color: #1c4d70; /* Tối màu khi hover */
+}

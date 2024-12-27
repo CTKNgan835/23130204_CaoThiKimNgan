@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="lab2.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Dashboard</h1>
+        <div>
+            <label for="filter">Filter by language:</label>
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="c">C</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+            </select>
+        </div>
+
+        <h2>Exercises</h2>
+        <div id="exerciseList">
+            <div class="exercise">
+                <h3>Exercise 1</h3>
+                <p>Short description of this exercise.</p>
+                <p>Difficulty: Easy</p>
+                <p>Time Limit: 30 minutes</p>
+                <button onclick="selectExercise('exercise1')">Select Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Exercise 2</h3>
+                <p>Short description of this exercise.</p>
+                <p>Difficulty: Medium</p>
+                <p>Time Limit: 45 minutes</p>
+                <button onclick="selectExercise('exercise2')">Select Exercise</button>
+            </div>
+            </div>
+    </div>
+    <script src="lab2.js"></script>
+</body>
+</html>

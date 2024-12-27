@@ -1,527 +1,409 @@
-/* Reset some default styling */
-* {
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Georgia', serif;
-}
+  }
+  
 
-body {
-    color: #333;
-    background-color: #fafafa;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #dcd9d9;
-}
-
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #6d8758;
-}
-
-.navbar nav ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-.navbar nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    padding: 10px;
-}
-
-.navbar nav a.active {
-    font-weight: bold;
-    color: #6d8758;
-}
-
-.services-section {
-    padding: 20px;
-    background-color:#f5f5f5; 
-    border: 1px solid #ddd; /* Đường viền cho khung */
-    border-radius: 8px; /* Làm mềm các góc */
-    margin: 20px; /* Khoảng cách bên ngoài */
-}
-
-.services-container {
-    display: flex; /* Hiển thị các item theo hàng ngang */
-    justify-content: space-around; /* Căn giữa các item */
-    flex-wrap: wrap; /* Cho phép xuống dòng khi không đủ chỗ */
-}
-
-.service-item {
-    text-align: center; /* Căn giữa nội dung trong từng item */
-    margin: 10px; /* Khoảng cách giữa các item */
-}
-
-.service-item img {
-    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của item */
-    height: auto; /* Để chiều cao tự động */
-}
-
-
-body {
-    background-color: white ;
-    background-size: cover;
-     /* Bọc đầy không gian của phần tử */ 
-    background-position: center; /* Canh giữa hình ảnh */
-    background-repeat: no-repeat; /* Không lặp lại hình ảnh nền */
-    min-height: 100vh; /* Chiều cao tối thiểu của body là toàn bộ chiều cao của viewport */
-    margin: 0; /* Xóa khoảng cách mặc định */
-}
-
-.hero {
-    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
-    background-size: cover;
-    background-position: center;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    color: white;
-    text-align: center;
-}
-
-.hero::before {
-    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
-    background-size: cover;
-    content: "";
-    position: absolute;
+  .header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(136, 134, 134, 0.5);
-}
+    background: white;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0.35rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+    
 
-.hero-content {
-    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
-    position: relative;
-    z-index: 1;
-}
+  .logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  .logo .highlight {
+    color: burlywood;
+  }
 
-.hero h2 {
-    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
-    font-size: 48px;
-    font-weight: 300;
-    margin-bottom: 20px;
-}
+  
 
-.shop-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #6d8758;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.shop-btn:hover {
-    background-color: #5b7546;
-}
-
-/* Services Section Styling */
-.services-section {
-    padding: 40px;
-    text-align: center;
-}
-
-.services-section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #6d8758;
-}
-
-.services-container {
+  .featured-article {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fff;
+    margin-top: 7rem ;
+  }
+  
+  .featured-article img {
+    width: 50%;
+    border-radius: 8px;
+  }
+  
+  .article-content {
+    margin-left: 2rem;
+  }
+ 
+  
+  .articles-grid {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .articles-grid article {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .categories {
+    background-color: #fafafa;
+    padding: 2rem;
     display: flex;
     justify-content: space-around;
-    gap: 20px;
+  }
+  
+  .category h3 {
+    margin-bottom: 1rem;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .categories {
+    display: flex;
     flex-wrap: wrap;
-}
+    padding: 2rem;
+    gap: 2rem;
+    background-color: #fafafa;
+  }
+  
+  .category {
+    flex: 1 1 calc(25% - 2rem);
+    min-width: 200px;
+  }
+  
+  .category h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .category ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .category ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .category ul li a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s;
+  }
+  
+  .category ul li a:hover {
+    color:burlywood ;
+  }
 
-.service-item {
-    width: 200px;
-    text-align: center;
-}
+  .section {
+    padding: 2rem 1rem ;
+  }
 
-.service-item {
-    transform: translateY(-5px); /* Nâng khung lên khi hover */
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Tăng độ bóng khi hover */
-}
-
-.service-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.service-item img:hover {
-       
-        transform: translateY(-5px); /* Nâng khung lên khi hover */
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Tăng độ bóng khi hover */
-    
-}
-footer {
-    background-color:  #dcd9d9;
-    padding: 40px;
+  .navbar {
     display: flex;
-    justify-content: space-between;
-}
-
-.footer-column {
-    width: 30%;
-}
-
-.footer-column h3 {
-    color: #6d8758;
-    margin-bottom: 10px;
-}
-
-.footer-column p,
-.footer-column a {
-    font-size: 14px;
-    color: #faf4f4;
-}
-
-.footer-column .contact-form input,
-.footer-column .contact-form button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.footer-column .contact-form button {
-    background-color: #6d8758;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.footer-column .contact-form button:hover {
-    background-color: #5b7546;
-}
-
-/* Tab content styling */
-
-.tab-link {
-    color: black; /* Màu bình thường */
-    text-decoration: none; /* Không gạch dưới */
-}
-
-.tab-link.active {
-    color: green; /* Màu khi tab được chọn */
-}
-.tab-content {
-    padding: 20px;
-    border: 1px solid #0b0b0b;
-    margin-top: 20px;
-    background-color: #f4faed;
-}
-
-/* Hero Section Styling */
-.hero {
-    background-image: url('https://flowersight.com/wp-content/uploads/2024/04/mua-hoa-o-dau-re-1.jpg')  ; 
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 1rem;
+  }
+  
+  .nav-items {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-items li {
+    font-size: 1rem;
+  }
+  
+  .nav-items li a,
+  .nav-items li span {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .nav-items li a:hover,
+  .nav-items li span:hover {
+    color: burlywood ;
+  }
+  
+  .dropdown {
     position: relative;
-    color: white;
-    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  #explore-menu {
+    position: absolute;
+    top: 1.5rem;
+    left: 0rem;
+    background: white;
+    list-style: none;
+    border: 0.0625rem solid #ccc;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    display: none;
+}
+.dropdown{
+    right: 0.5rem;
+
+}
+.dropdown:hover #explore-menu {
+display: block;
+
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
+
+#search-icon {
+    cursor: pointer;
+    font-size: 1rem;
+   
+    display: inline-block;
+  }
+  
+  #search-bar-container {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(143, 142, 142, 0.5);
-}
-
-.hero-content {
-    background-image: url('./ảnh/nềnhoa.jpg');
-    position: relative;
-    z-index: 1;
-}
-
-.hero h2 {
-    background-image: url('./ảnh/nềnhoa.jpg');
-    font-size: 48px;
-    font-weight: 300;
-    margin-bottom: 20px;
-}
-
-.shop-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #6d8758;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.shop-btn:hover {
-    background-color: #6d8758 ;
-}
-
-.service-item p {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #6d8758;
-    }
-
-
-    .images-section {
-        padding: 20px;
-        text-align: center;
-    }
-    
-    .images-section h2 {
-        font-size: 32px;
-        margin-bottom: 20px;
-        color: #6d8758;
-        border: 2px solid #FFFFFF;
-        background-color: white ;  /* Đường viền trắng xung quanh tiêu đề */
-        padding: 10px; /* Khoảng cách giữa chữ và đường viền */
-        border-radius: 5px; /* Bo góc cho đường viền */
-        display: inline-block; /* Giúp viền chỉ bao quanh nội dung */
-    
-    }
-    
-    .images-container {
-        display: flex;
-        overflow-x: auto; /* Cho phép cuộn ngang */
-        padding: 10px 0; /* Khoảng cách trên và dưới */
-    }
-    
-    .image-item {
-        flex: 0 0 auto; /* Giữ cho kích thước hình ảnh cố định */
-        margin: 10px; /* Khoảng cách giữa các hình ảnh */
-    }
-    
-    .image-item img {
-        width: 25rem; /* Đặt chiều rộng hình ảnh */
-        height: 10rem; /* Để chiều cao tự động */
-        border-radius: 8px; /* Bo góc cho hình ảnh */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho hình ảnh */
-        transition: transform 0.2s; /* Hiệu ứng khi hover */
-    }
-    
-    .image-item img:hover {
-        transform: scale(1.05); /* Phóng to hình ảnh khi hover */
-    }
-
-
-    .bouquet-guide {
-        display: flex; /* Sử dụng flex để sắp xếp các item */
-        justify-content: space-between; /* Căn giữa khoảng cách giữa các item */
-        margin-top: 20px; /* Khoảng cách giữa phần hình ảnh và phần hướng dẫn */
-        flex-wrap: wrap; /* Cho phép các item xuống dòng khi không đủ chỗ */
-    }
-    
-    .bouquet-item {
-        flex: 1; /* Cho mỗi item chiếm cùng 1 phần không gian */
-        max-width: 30%; /* Giới hạn chiều rộng tối đa cho mỗi item */
-        margin: 0 10px; /* Khoảng cách giữa các item */
-    }
-    
-    .bouquet-image img {
-        width: 24rem; /* Đảm bảo hình ảnh điền đầy trong item */
-        height: 34rem; /* Tự động chiều cao */
-        border-radius: 8px; /* Bo góc cho hình ảnh */
-        margin-bottom: 10px; /* Khoảng cách dưới hình ảnh */
-    }
-    
-    .bouquet-description {
-        text-align: left; /* Căn trái văn bản trong mô tả */
-    }
-    
-    .bouquet-description h3 {
-        margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
-        color: #6d8758; /* Màu tiêu đề mô tả */
-    }
-    
-    .bouquet-description p {
-        margin: 5px 0; /* Khoảng cách giữa các đoạn văn */
-    }
-.video-section {
-    padding: 20px;
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px 20px;
-   
-    background-color:  #fbfbfb;
-    color: white;
-    text-decoration: none;
-   
-
-}
-
-.video-section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color:  #6d8758;
-}
-
-.video-container {
+    background: white;
+    padding: 0.625rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: space-around; /* Căn giữa các video */
-    flex-wrap: wrap;
- }
-
-.video-item {
-    margin: 10px; /* Khoảng cách giữa các video */
-    flex: 0 1 30%; /* Chiều rộng hàm ý cho các video */
-    max-width: 300px; /* Chiều rộng tối đa cho mỗi video */
-    border: 1px solid #ddd; /* Đường viền cho khung video */
-    border-radius: 8px; /* Bo góc cho khung video */
-    overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
-}
-
-/* Điều chỉnh iframe để cho phù hợp với khung */
-.video-item iframe {
-    width: 100%; /* Đảm bảo video điền đầy khung */
-    height: 100%;
-}
-
-.video-item:hover  {
-    transform: scale(1.05); 
-}
-
-
-/* Footer Section Styling */
-.footer {
-    text-align: center;
-    padding: 40px;
-    background-color: #b3b0b0;
-    color: rgb(19, 18, 18);
-    display: flex;
-}
-
-.footer-column {
-    width: 30%;
-}
-
-.footer-column h3 {
-    color: #6d8758;
-    margin-bottom: 10px;
-}
-
-.footer-column p,
-.footer-column a {
-    font-size: 15px;
-    color: #131313;
-}
-
-.footer-column .contact-form input,
-.footer-column .contact-form button {
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  #search-bar-container.hidden {
+    display: none;
+  }
+  
+  #search-input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  #search-suggestions {
+    position: absolute;
+    top: 3.125rem;
+    left: 0;
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.footer-column .contact-form button {
-    background-color: #6d8758;
-    color: white;
-    border: none;
+    background: white;
+    list-style: none;
+    border: 0.0625rem solid #ccc;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    padding: 0.625rem;
+    z-index: 1000;
+    max-height: 12.5rem;
+    overflow-y: auto;
+  }
+  
+  #search-suggestions li {
+    padding: 0.3125rem 0.625rem;
     cursor: pointer;
+  }
+  
+  #search-suggestions li:hover {
+    background: #f5f5f5;
+  }
+
+  .about {
+    display: flex;  
+    background-color: rgb(255, 238, 216);
+    border-radius: 1rem; 
+    padding: 1.3rem;  
+    box-shadow: 0 0.08rem 1rem rgba(0, 0, 0, 0.1);  
+    max-width: 800px;  
+    margin: 0 auto;  
+    margin-top: 6rem;
+    opacity: 0;  
+    transform: translateY(20px);  
+    animation: fadeIn 0.8s forwards; 
 }
 
-.footer-column .contact-form button:hover {
-    background-color: #5b7546;
+.about .info {
+    flex: 1;  
 }
 
-/* Tab content styling */
-
-.tab-link {
-    color: black; /* Màu bình thường */
-    text-decoration: none; /* Không gạch dưới */
+.about img {
+    width: 10rem;  
+    height: auto;   
+    border-radius: 1rem;  
+    margin-left: 2rem;  
 }
-
-
-
-.tab-link:hover  {
-    color: #5b7546;;
-
-}
-
-
-.about-section {
-    padding: 20px;
-    text-align: center;
-}
-
-.about-container {
-    background-color: #f9f9f9; /* Màu nền của khung */
-    border: 1px solid #ddd; /* Đường viền */
-    border-radius: 8px; /* Làm mềm các góc */
-    padding: 15px; /* Khoảng cách bên trong */
-    margin: 20px auto; /* Margin tự động để căn giữa phần khung */
-    max-width: 400px; /* Đặt chiều rộng tối đa cho khung */
-}
-
-.about-image {
-    max-width: 100%; /* Hình ảnh không vượt quá chiều rộng khung */
-    height: auto; /* Chiều cao tự động */
-}
-
-.about-description {
-    margin-top: 10px; /* Khoảng cách giữa hình và mô tả */
-}
-
-/* About Page Styling */
-.about-content {
-    font-size: 1,5rem;
-    display: flex;
-    margin-top: 10rem;
-    display: flex; /* Nếu bạn cần sắp xếp thêm nội dung, */
-    justify-content: center; /* Canh giữa nội dung */
-    align-items: center; /* Canh giữa dọc */
-    
-}
-
-.about-content img {
-    max-width: 50rem;
-    margin-right: 10rem;
-}
-
-.about-intro p {
-    font-size: 1.5rem ; /* Kích thước chữ cho các đoạn */
-}
-
 
 .highlight {
-    font-weight: bold; /* In đậm văn bản */
-    color: #5b7546; /* Màu chữ là xanh */
+    font-weight: bold;  
+    color: #d2691e;  
+}
+
+h2 {
+    color: #8B4513; 
+}
+
+p {
+    margin: 5px 0;  
+    line-height: 1.6;  
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.tab-content {
+    margin: 2rem ; 
 }
 
 .Tabs-links {
-   
-    text-align: center;
-    font-size: 1.5rem;
+    list-style: none;  
+    padding: 0;       
+    display: flex;   
+    justify-content: space-around;  
+    background-color: rgb(248, 208, 156);  
+    border-radius: 0.5rem ;  
+    padding: 1rem ;  
 }
 
-
-
-.tab-content {
-    text-align: center;
-    padding: 3rem;
-    border: 0.21rem solid #5b7546;
-    margin-top: 5rem ;
-    background-color: #f9fef4;
-    
+.Tabs-links li {
+    margin: 0 1rem ; 
 }
 
+.Tabs-links a {
+    text-decoration: none;  
+    color: black;
+    padding: 1rem 1.2rem ;  
+    border: 1px  solid transparent;  
+    border-radius: 0.5rem ;  
+    transition: background-color 0.3s;  
+}
+
+.Tabs-links a:hover {
+    background-color: #d9b89a;  
+    border: 1px solid #a67c4d;  
+}
+
+  .tab-content {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fff;
+    margin-top: 7rem ;
+
+  }
+
+  .category h3 {
+    display: flex;
+    align-items: center;
+}
+
+.category h3 i {
+    margin-right: 8px;  
+    color: #4CAF50;  
+}
+
+ 
+.support {
+  background-color: burlywood;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.support button {
+  background-color: white;
+  color: burlywood;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+support-box {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+button {
+  color: white ;
+  background-color: #d9b89a;  
+  border: 1px solid #a67c4d;  
+
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  color: white ;
+  background-color: #d9b89a;  
+  border: 1px solid #a67c4d;  
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px; 
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px; 
+  border-radius: 10px;
+  text-align: center;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
