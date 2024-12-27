@@ -241,13 +241,14 @@ display: block;
 
   .about {
     display: flex;  
-    background-color: rgb(255, 238, 216);
+    background-color: rgb(253, 242, 227);
     border-radius: 1rem; 
     padding: 1.3rem;  
     box-shadow: 0 0.08rem 1rem rgba(0, 0, 0, 0.1);  
-    max-width: 800px;  
-    margin: 0 auto;  
-    margin-top: 6rem;
+    width: 76rem ;  
+    margin-left: 4rem  ;
+    margin-right: 2rem ;
+    margin-top: 3rem;
     opacity: 0;  
     transform: translateY(20px);  
     animation: fadeIn 0.8s forwards; 
@@ -257,16 +258,9 @@ display: block;
     flex: 1;  
 }
 
-.about img {
-    width: 10rem;  
-    height: auto;   
-    border-radius: 1rem;  
-    margin-left: 2rem;  
-}
-
 .highlight {
     font-weight: bold;  
-    color: #d2691e;  
+    
 }
 
 h2 {
@@ -285,46 +279,64 @@ p {
     }
 }
 .tab-content {
-    margin: 2rem ; 
+  margin: 2rem;
 }
 
 .Tabs-links {
-    list-style: none;  
-    padding: 0;       
-    display: flex;   
-    justify-content: space-around;  
-    background-color: rgb(250, 221, 183);  
-    border-radius: 0.5rem ;  
-    padding: 1rem ;  
+  list-style: none;  
+  padding: 0;       
+  display: flex;   
+  justify-content: space-around;  
+  background-color: rgb(253, 242, 227);
+  border-radius: 0.5rem;  
+  padding: 1rem;  
 }
 
 .Tabs-links li {
-    margin: 0 1rem ; 
+  margin: 0 1rem; 
 }
 
 .Tabs-links a {
-    text-decoration: none;  
-    color: black;
-    padding: 1rem 1.2rem ;  
-    border: 1px  solid transparent;  
-    border-radius: 0.5rem ;  
-    transition: background-color 0.3s;  
+  text-decoration: none;  
+  color: black;
+  padding: 1rem 1.2rem;  
+  border: 1px solid transparent;  
+  border-radius: 0.5rem;  
+  transition: background-color 0.3s;  
 }
 
 .Tabs-links a:hover {
-    background-color: #e2b78f;  
-    border: 1px solid #a67c4d;  
+  background-color: #e2b78f;  
+  border: 1px solid #a67c4d;  
 }
 
-  .tab-content {
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-    background-color: #fff;
-    margin-top: 7rem ;
+.lab-description {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
 
-  }
+.lab-item {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #f9f9f9;
+  flex: 1 1 calc(25% - 2rem);
+  box-sizing: border-box; 
+}
 
+
+
+.tab-content {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fff;
+  margin-top: 7rem;
+}
+
+ 
   .category h3 {
     display: flex;
     align-items: center;
