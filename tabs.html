@@ -1,43 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Environment wed</title>
-        <link rel="stylesheet" href="styles.css">
-      </head>
-      <body>
-         
-    <header class= "header">
-        <div class="logo">
-      <h1>CTKN<span class="highlight">Environment</span></h1>
-      <p>  </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTKN Environment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <h1>CTKN<span class="highlight">Environment</span></h1>
     </div>
     <nav class="navbar">
         <ul class="nav-items">
             <li><a href="index.html" class="tab-link">Home</a></li>
-          <li><a href="about.html" class="tab-link">About</a></li>
-          <li><a href="tabs.html" class="tab-link">Tabs</a></li>
-          <li><a href="result.html" class="tab-link">Result  </a> </a></li>
-         
+            <li><a href="about.html" class="tab-link">About</a></li>
+            <li><a href="tabs.html" class="tab-link">Tabs</a></li>
+            <li><a href="result.html" class="tab-link">Result</a></li>
         </ul>
-      </nav>
-  </header>
-    
-     <!-- Labs Content -->
+    </nav>
+</header>
+
 <div class="tab-content">
-  <h2>Our Labs</h2>
-  <ul class="Tabs-links">
-      <li><a href="Lab1.html">Lab 1</a></li>
-      <li><a href="Lab2.html">Lab 2</a></li>
-      <li><a href="Lab3.html">Lab 3</a></li>
-      <li><a href="Lab4.html">Lab 4</a></li>
-      <li><a href="lab5.html">Lab 5</a></li>
-      <li><a href="req5.html">Lab 6-req5</a></li> 
-      <li><a href="req6.html">Lab 6-req6</a></li>  
-      <li><a href="req7.html">Lab 6-req7</a></li>
-      <li><a href="req8.html">Lab 6-req8</a></li>
-  </ul>
+    <h2>Our Labs</h2>
+
+    <ul class="Tabs-links">
+        <li><a href="#" class="lab-link" data-lab="1">Lab 1</a></li>
+        <li><a href="#" class="lab-link" data-lab="2">Lab 2</a></li>
+        <li><a href="#" class="lab-link" data-lab="3">Lab 3</a></li>
+        <li><a href="#" class="lab-link" data-lab="4">Lab 4</a></li>
+        <li><a href="#" class="lab-link" data-lab="5">Lab 5</a></li>
+        <li><a href="#" class="lab-link" data-lab="6.1">Lab 6-req5</a></li> 
+        <li><a href="#" class="lab-link" data-lab="6.2">Lab 6-req6</a></li>  
+        <li><a href="#" class="lab-link" data-lab="6.3">Lab 6-req7</a></li>
+        <li><a href="#" class="lab-link" data-lab="6.4">Lab 6-req8</a></li>
+    </ul>
 </div>
+
+<div class="lab-description" id="lab-description">
+    <h3 id="lab-title">Lab Title</h3>
+
+    <h2> ...</h2>
+
+
+    <div class="external-links" id="external-links">
+      <h4>Links:</h4>
+      <a id="design-link" href="#" target="_blank" style="display:none;">Link Lab</a>
+  </div>
+
+    <div class="requirement-links" id="requirement-links">
+        <h4>Requirements:</h4>
+        <ol id="requirements-list"></ol>
+    </div>
+
+
+
+    <div class="design-links" id="design-links">
+        <h4>Design:</h4>
+        <p><strong>Image:</strong></p>
+        <img id="design-image" src="" alt="Lab Design" style="max-width: 100%; display:none;">
+    </div>
+   
+</div>
+
+<footer>
+    <p>&copy; 2023 CTKN Environment. All Rights Reserved.</p>
+</footer>
+
+<script>
+    const labs = {
+        1: {
+            title: "Lab 1",
+            
+            requirements: [
+                "Yếu cầu cho lab1: Tạo ra một user scenario.",
+                "User Interface Design Requirements", 
+                "với các phần như Text Input (Single-line),(Optional),  (Read-only), Additional Considerations",
+                "như cô hướng dẫn", 
+            ],
+            design: {
+                image: "image/lab1.jpg", 
+                link: "Lab1.html" // Đường dẫn đến thiết kế
+            }
+        },
+        2: {
+            title: "Lab 2",
+            requirements: [
+               "Yêu cầu cho lab2: ",
+                "Students should authenticate before accessing the system.",
+                "After login, students should land on a dashboard that displays available exercises to choose from.",
+                "Allow students to filter exercises by programming language. To search for exercises based on keywords. Indicate whether an exercise has been completed, in progress, or not started. ",
+                "After submission, students should see the results of their submission.",
+            ],
+            design: {
+                image:  "image/lab2.jpg", 
+                link: "Lab2.html"
+            }
+        },
+        3: {
+            title: "Lab 3",
+            requirements: [
+                "Yêu cầu cho lab 3:  chia sẻ tài liệu học tập cho sinh viên theo môn học. Mỗi môn học có thể chia sẻ các tài liệu như Bài giảng / Bài tập / Tài liệu tham khảo.",
+            ],
+            design: {
+                image: "image/lab3.jpg", 
+                link: "Lab3.html"
+            }
+        },
+        4: {
+            title: "Lab 4",
+            requirements: [
+                "Yêu cầu cho lab 4: làm giống như hình ở phần design cô đã gửi.",
+      
+            ],
+            design: {
+                image: "image/lab4.jpg" ,
+               
+
+                link: "lab4.html"
+            }
+        },
+        5: {
+            title: "Lab 5",
+            requirements: [
+                "Yêu cầu cho lab 5: làm giống 3 hình ở phần design.",
+                
+            ],
+            design: {
+              image: "image/lab5.jpg" ,
+              
+                link: "lab5.html"
+            }
+        },
+        // Thêm các lab 6 theo yêu cầu
+        '6.1': {
+            title: "Lab 6-req5",
+            requirements: [
+                "Yêu cầu cho lab 6-req5: làm giống ảnh cô yêu cầu có các khoá học được hiển thị với đánh giá, mô tả, tiêu đề,...",
+                "Thiết kế cho lab 6-req5  giống như hình ở phần design."
+            ],
+            design: {
+              image: "image/6. Req5.png",
+                link: "req5.html"
+            }
+        },
+        '6.2': {
+            title: "Lab 6-req6",
+            requirements: [
+                "Yêu cầu cho lab 6-req6: làm giống req5 nhưng thêm js cho từng khoá học.",
+                "Thiết kế cho lab 6-req6 giống như hình ở phần design."
+            ],
+            design: {
+                image: "image/6. Req6.png",
+                link: "req6.html"
+            }
+        },
+        '6.3': {
+            title: "Lab 6-req7",
+            requirements: [
+                "Yêu cầu cho lab 6-req7: làm giống hình ảnh cô gửi.",
+                "Thiết kế cho lab 6-req7: giống ảnh dưới phần design"
+            ],
+            design: {
+                image: "image/6. Req7.png",
+                link: "req7.html"
+            }
+        },
+        '6.4': {
+            title: "Lab 6-req8",
+            requirements: [
+                "Yêu cầu cho lab 6-req8: làm giống ảnh bên dưới.",
+                "Thiết kế cho lab 6-req8: giống như phần ảnh của design"
+            ],
+            design: {
+                image: "image/6. Req8.png",
+                link: "req8.html"
+            }
+        }
+    };
+
+    document.querySelectorAll('.lab-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const labId = e.target.dataset.lab;
+            updateLabContent(labId);
+        });
+    });
+
+    function updateLabContent(labId) {
+        const labData = labs[labId];
+        document.getElementById('lab-title').textContent = labData.title;
+
+        const requirementsList = document.getElementById('requirements-list');
+        requirementsList.innerHTML = labData.requirements.map(req => `<li>${req}</li>`).join('');
+
+        const designImage = document.getElementById('design-image');
+        const designLink = document.getElementById('design-link');
+
+        designImage.src = labData.design.image;
+        designLink.href = labData.design.link;
+
+        designImage.style.display = 'block';
+        designLink.style.display = 'inline'; // Hiển thị link
+    }
+
+    // Khởi động với Lab 1
+    updateLabContent(1);
+</script>
+
 </body>
 </html>

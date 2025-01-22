@@ -428,3 +428,54 @@ button:hover {
       opacity: 1;
   }
 }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0.35rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.logo .highlight {
+    color: burlywood;
+}
+
+/* Đưa vào phần này để cách ly tab và nội dung chi tiết của Labs */
+.tab-content {
+    margin-top: 7rem; /* Đảm bảo nội dung không bị che bởi header */
+}
+
+.lab-description {
+    padding: 2rem;
+    background-color: #f9f9f9; /* Màu nền cho phần mô tả lab */
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    margin-top: 1rem; /* Khoảng cách giữa các phần */
+}
+
+/* Các phần khác trong CSS không thay đổi */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
